@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Startup jackd audio server using a default setting.
+#
+# By Edgar Berdahl, Feb. 2012
+
+
+
+# This setting results in lower latency, and it seems to work
+# fine for a wide variety of patches.
+#jackd --silent -R -P62 -dalsa -dhw:0 -p256 -n2 -i2 -o2 -s -S -r22050 &
+jackd --timeout 200 -R -P62 -dalsa -dhw:0 -p256 -n2 -i2 -o2 -s -S -r22050 &
+
+
+# This setting results in more latency, but might work better
+# for some unusual patches.
+#jackd --silent -R -P62 -dalsa -dhw:0 -p512 -n3 -i2 -o2 -s -S -r22050 &

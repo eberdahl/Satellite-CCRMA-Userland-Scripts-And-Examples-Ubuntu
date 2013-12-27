@@ -1,0 +1,23 @@
+#N canvas 140 22 486 423 10;
+#X obj 129 96 inlet~;
+#X obj 189 103 loadbang;
+#X obj 259 104 r pd;
+#X obj 258 125 route dsp;
+#X obj 183 185 snapshot~;
+#X obj 131 254 outlet~;
+#X obj 226 293 s \$0-number;
+#X msg 225 263 label \$1;
+#X obj 21 21 cnv 13 60 13 empty \$0-number ~2.000000 2 7 0 10 -204800
+-16662 0;
+#X obj 190 217 makefilename ~%f;
+#X obj 202 154 metro 100;
+#X connect 0 0 4 0;
+#X connect 0 0 5 0;
+#X connect 1 0 10 0;
+#X connect 2 0 3 0;
+#X connect 3 0 10 0;
+#X connect 4 0 9 0;
+#X connect 7 0 6 0;
+#X connect 9 0 7 0;
+#X connect 10 0 4 0;
+#X coords 0 -1 1 1 62 15 2 20 20;

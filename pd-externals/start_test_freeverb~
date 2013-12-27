@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+# Start up jack
+/usr/bin/jackd -dalsa -dhw:0 -p1024 -n4 -i2 -o2 -s -S -r44100 &
+
+# Wait a little while in case jack needs some time to think
+sleep 3
+
+# Start up pd extended (with no gui), running the patch default_patch.pd
+pdextended -nogui -audiobuf 25 /home/ccrma/MyPdExternals/Test-freeverb.pd &

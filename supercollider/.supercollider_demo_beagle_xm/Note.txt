@@ -1,0 +1,4 @@
+Thanks for Florian Goltz for these!  Anyway, they can help you get setup with Firmata communicating between ARduino and SuperCollider.
+
+If you were to copy load_default_patch into ~/on-startup, then it would run automatically on boot.
+

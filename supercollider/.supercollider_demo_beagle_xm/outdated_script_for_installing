@@ -1,0 +1,6 @@
+cp load_default_patch /home/ccrma/on-startup/load_default_patch
+cp sclang.sc /home/ccrma/.sclang.sc
+cp SCPyduino.sc /home/ccrma/share/SuperCollider/quarks/SCPyduino/SCPyduino.sc
+cp sc_standalone_example.scd /home/ccrma/sc_standalone_example.sc
+cp start-jackd /home/ccrma/bin/start-jackd
+cp supercollider_examples.scd /home/ccrma/supercollider_examples.scd 
