@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Startup jackd audio server using a default setting.
+#
+# By Edgar Berdahl, Feb. 2012
+
+
+
+# For the Raspberry Pi, this seems to work well:
+jackd -R -P62 --timeout 2000 -d alsa -d hw:0 -r 22050 -p256 -n4 -P &
+
+
+
+# The following were settings for the Beagle Board xM to get jack running
+
+
+# This setting results in lower latency, and it seems to work
+# fine for a wide variety of patches.
+#jackd --silent -R -P62 --timeout 200 -dalsa -dhw:0 -p256 -n2 -i2 -o2 -s -S -r22050 -Xseq &
+
+
+# This setting results in more latency, but might work better
+# for some unusual patches.
+#jackd --silent -R -P62 --timeout 200 -dalsa -dhw:0 -p512 -n3 -i2 -o2 -s -S -r22050 -Xseq &

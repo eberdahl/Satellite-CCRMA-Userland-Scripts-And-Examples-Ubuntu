@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Terminate any processes running that are named pdextended, jackd, or pd.
+#
+# By Edgar Berdahl, Feb. 2012
+
+
+killall pdextended
+killall jackd
+killall pd
+
+
+

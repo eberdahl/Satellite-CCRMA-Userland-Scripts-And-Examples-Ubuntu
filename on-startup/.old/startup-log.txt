@@ -1,0 +1,128 @@
+sys_nmidiin 1, nmidiindev 1
+libdir loader $Revision: 1.8 $
+	compiled on Nov  9 2012 at 02:54:16 
+	compiled against Pd version 0.42.5.extended
+Gem: can't load library
+libdir_loader: added 'cyclone' to the global objectclass path
+libdir_loader: added 'zexy' to the global objectclass path
+libdir_loader: added 'creb' to the global objectclass path
+libdir_loader: added 'cxc' to the global objectclass path
+libdir_loader: added 'iemlib' to the global objectclass path
+libdir_loader: added 'list-abs' to the global objectclass path
+libdir_loader: added 'mapping' to the global objectclass path
+libdir_loader: added 'markex' to the global objectclass path
+libdir_loader: added 'maxlib' to the global objectclass path
+libdir_loader: added 'memento' to the global objectclass path
+libdir_loader: added 'mjlib' to the global objectclass path
+libdir_loader: added 'motex' to the global objectclass path
+oscx: can't load library
+libdir_loader: added 'pddp' to the global objectclass path
+libdir_loader: added 'pdogg' to the global objectclass path
+libdir_loader: added 'pixeltango' to the global objectclass path
+libdir_loader: added 'pmpd' to the global objectclass path
+libdir_loader: added 'rradical' to the global objectclass path
+libdir_loader: added 'sigpack' to the global objectclass path
+libdir_loader: added 'smlib' to the global objectclass path
+libdir_loader: added 'toxy' to the global objectclass path
+libdir_loader: added 'unauthorized' to the global objectclass path
+libdir_loader: added 'pan' to the global objectclass path
+libdir_loader: added 'hcs' to the global objectclass path
+libdir_loader: added 'jmmmp' to the global objectclass path
+libdir_loader: added 'ext13' to the global objectclass path
+libdir_loader: added 'ggee' to the global objectclass path
+libdir_loader: added 'flib' to the global objectclass path
+libdir_loader: added 'ekext' to the global objectclass path
+libdir_loader: added 'flatspace' to the global objectclass path
+PDP: pure data packet version 0.12.6
+pidip: can't load library
+couldn't open MIDI input device 0
+couldn't open MIDI output device 0
+opened 0 MIDI input device(s) and 0 MIDI output device(s).
+
+
+
+^CPd: signal 2
+sys_nmidiin 1, nmidiindev 1
+libdir loader $Revision: 1.8 $
+	compiled on Nov  9 2012 at 02:54:16 
+	compiled against Pd version 0.42.5.extended
+Gem: can't load library
+libdir_loader: added 'cyclone' to the global objectclass path
+libdir_loader: added 'zexy' to the global objectclass path
+libdir_loader: added 'creb' to the global objectclass path
+libdir_loader: added 'cxc' to the global objectclass path
+libdir_loader: added 'iemlib' to the global objectclass path
+libdir_loader: added 'list-abs' to the global objectclass path
+libdir_loader: added 'mapping' to the global objectclass path
+libdir_loader: added 'markex' to the global objectclass path
+libdir_loader: added 'maxlib' to the global objectclass path
+libdir_loader: added 'memento' to the global objectclass path
+libdir_loader: added 'mjlib' to the global objectclass path
+libdir_loader: added 'motex' to the global objectclass path
+libdir_loader: added 'pddp' to the global objectclass path
+libdir_loader: added 'pdogg' to the global objectclass path
+libdir_loader: added 'pixeltango' to the global objectclass path
+libdir_loader: added 'pmpd' to the global objectclass path
+libdir_loader: added 'rradical' to the global objectclass path
+libdir_loader: added 'sigpack' to the global objectclass path
+libdir_loader: added 'smlib' to the global objectclass path
+libdir_loader: added 'toxy' to the global objectclass path
+libdir_loader: added 'unauthorized' to the global objectclass path
+libdir_loader: added 'pan' to the global objectclass path
+libdir_loader: added 'hcs' to the global objectclass path
+libdir_loader: added 'jmmmp' to the global objectclass path
+libdir_loader: added 'ext13' to the global objectclass path
+libdir_loader: added 'ggee' to the global objectclass path
+libdir_loader: added 'flib' to the global objectclass path
+libdir_loader: added 'ekext' to the global objectclass path
+libdir_loader: added 'flatspace' to the global objectclass path
+priority 6 scheduling enabled.
+couldn't open MIDI input device 0
+couldn't open MIDI output device 0
+opened 0 MIDI input device(s) and 0 MIDI output device(s).
+priority 8 scheduling enabled.
+
+
+
+
+^CPd: signal 2
+sys_nmidiin 1, nmidiindev 1
+libdir loader $Revision: 1.8 $
+	compiled on Nov  9 2012 at 02:54:16 
+	compiled against Pd version 0.42.5.extended
+Gem: can't load library
+libdir_loader: added 'cyclone' to the global objectclass path
+libdir_loader: added 'zexy' to the global objectclass path
+libdir_loader: added 'creb' to the global objectclass path
+libdir_loader: added 'cxc' to the global objectclass path
+libdir_loader: added 'iemlib' to the global objectclass path
+libdir_loader: added 'list-abs' to the global objectclass path
+libdir_loader: added 'mapping' to the global objectclass path
+libdir_loader: added 'markex' to the global objectclass path
+libdir_loader: added 'maxlib' to the global objectclass path
+libdir_loader: added 'memento' to the global objectclass path
+libdir_loader: added 'mjlib' to the global objectclass path
+libdir_loader: added 'motex' to the global objectclass path
+libdir_loader: added 'pddp' to the global objectclass path
+libdir_loader: added 'pdogg' to the global objectclass path
+libdir_loader: added 'pixeltango' to the global objectclass path
+libdir_loader: added 'pmpd' to the global objectclass path
+libdir_loader: added 'rradical' to the global objectclass path
+libdir_loader: added 'sigpack' to the global objectclass path
+libdir_loader: added 'smlib' to the global objectclass path
+libdir_loader: added 'toxy' to the global objectclass path
+libdir_loader: added 'unauthorized' to the global objectclass path
+libdir_loader: added 'pan' to the global objectclass path
+libdir_loader: added 'hcs' to the global objectclass path
+libdir_loader: added 'jmmmp' to the global objectclass path
+libdir_loader: added 'ext13' to the global objectclass path
+libdir_loader: added 'ggee' to the global objectclass path
+libdir_loader: added 'flib' to the global objectclass path
+libdir_loader: added 'ekext' to the global objectclass path
+libdir_loader: added 'flatspace' to the global objectclass path
+priority 6 scheduling enabled.
+couldn't open MIDI input device 0
+couldn't open MIDI output device 0
+opened 0 MIDI input device(s) and 0 MIDI output device(s).
+priority 8 scheduling enabled.
+^CPd: signal 2

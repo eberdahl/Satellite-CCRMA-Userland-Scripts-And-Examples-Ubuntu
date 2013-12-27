@@ -1,0 +1,23 @@
+#!/bin/sh -e
+#
+# This script runs by default on startup.  First it starts the Jack audio
+# server, and then it starts pd with a default patch.
+#
+# Feb. 2012, Edgar Berdahl
+
+# Start up jack
+/home/ccrma/bin/start-jackd
+
+# Wait a few seconds for jackd to start
+sleep 3
+
+
+
+
+
+# Start up pd extended (with no gui) running a default patch
+# ----------------------------------------------------------
+# Choose one from below.
+
+/home/ccrma/bin/pd -nogui /home/ccrma/on-startup/just-make-sound.pd &
+

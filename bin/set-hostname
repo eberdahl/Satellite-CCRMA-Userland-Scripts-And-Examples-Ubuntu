@@ -1,0 +1,73 @@
+#!/bin/bash
+#
+# Shell script for setting hostname.  This is only relevant if you have
+# configured your kit to use avahi.
+#
+#
+#
+# Copyright (C) Feb. 2012 Edgar Berdahl for the Satelite CCRMA project
+#
+# The above copyright notice including the copyright holders and this
+# permission notice shall be included in all copies, substantial
+# portions, or derivatives of the Software and Software portions.
+#
+# The end-user documentation included with the redistribution, if any,
+# must include the following acknowledgment: "This product includes
+# software developed in the course of the Satellite CCRMA project
+# (http://ccrma.stanford.edu/satellite/) and its contributors", in the
+# same place and form as other third-party acknowledgments. In
+# addition, this acknowledgment must appear in the software itself in
+# the same form and location as other such third-party acknowledgments.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 3 as
+# published by the Free Software Foundation except subject to the additional
+# attribution requirements described beneath the copyright notice above.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the modified GNU General Public 
+# License along with this program.
+
+
+
+if [ $# -ne 1 ]
+then
+	echo "USAGE:  set-hostname  <hostname>"
+	echo ""
+	echo "The default hostname is satellite, but you might wish to change"
+	echo "it if you have multiple Satellite CCRMA kits connected to the"
+	echo "same router."
+	echo
+	echo "For instance, if you are using avahi, your Satellite CCRMA kit"
+	echo "is connected directly to a router, and the hostname is ccrma, "
+        echo "then you can login using the following command:"
+	echo "ssh -XY ccrma@satellite.local"
+else
+	echo "Setting hostname to $1"
+	echo ""
+	echo "If you need to enter a password, it should be tmppwd"
+	echo "$1" > ~/bin/hostname
+	sudo cp /etc/hostname /etc/hostname.backup
+	sudo mv ~/bin/hostname /etc
+
+	cp /etc/avahi/avahi-daemon.conf ~/bin
+	# From bash directly, there wouldn't be extra quotes around the new hostname
+	# e.g, perl -pi -e 's/\Ahost-name.*/host-name=$1/g' avahi-daemon.conf
+	perl -pi -e 's/\Ahost-name.*/host-name='$1'/g' avahi-daemon.conf
+	sudo cp /etc/avahi/avahi-daemon.conf /etc/avahi/avahi-daemon.conf.backup
+	sudo mv ~/bin/avahi-daemon.conf /etc/avahi
+
+	cp /etc/hosts ~/bin
+	# From bash directly, there wouldn't be extra quotes around the new hostname
+	# e.g., perl -pi -e 's/\A127\.0\.1\.1.*/127\.0\.1\.1\t$1/g' hosts
+	perl -pi -e 's/\A127\.0\.1\.1.*/127\.0\.1\.1\t'$1'/g' hosts
+	sudo cp /etc/hosts /etc/hosts.backup
+	sudo mv ~/bin/hosts /etc
+
+	echo ""
+	echo "You need to reboot by running 'sudo reboot' for the changes to take effect..."
+fi

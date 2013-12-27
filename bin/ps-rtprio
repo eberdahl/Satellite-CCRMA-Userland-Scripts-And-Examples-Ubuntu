@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# List the currently running THREADS instead of just the PROCESSES.
+# Also list the realtime priorities RTPRIO, which adjust how well
+# audio works in realtime mode.
+#
+# By Edgar Berdahl, Feb. 2012
+
+ps -eLo pid,class,rtprio,ni,pri,pcpu,stat,comm --sort -rtprio | less

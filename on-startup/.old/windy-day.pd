@@ -1,0 +1,80 @@
+#N canvas 321 72 1119 653 24;
+#X text 3 611 Edgar Berdahl \, 9/2010;
+#X obj 6 121 noise~;
+#X obj 505 6 get-input-from-arduino;
+#X obj 351 605 dac~;
+#X obj 591 424 noise~;
+#X obj 358 261 noise~;
+#X obj 314 121 hsl 100 30 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 666 263 hsl 100 30 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 899 424 hsl 100 30 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#N canvas 199 60 964 448 master-fx 0;
+#X obj 67 26 inlet~;
+#X obj 200 227 inlet~;
+#X obj 169 353 outlet~;
+#X obj 34 351 outlet~;
+#X obj 81 277 freeverb~;
+#X msg 354 38 roomsize \$1;
+#X msg 353 92 damping \$1;
+#X msg 352 139 width \$1;
+#X msg 352 182 wet \$1;
+#X msg 352 228 dry \$1;
+#X msg 352 274 print;
+#X msg 351 319 freeze \$1;
+#X msg 349 373 bypass \$1;
+#X text 493 273 - print the current values of the above parameters
+;
+#X text 505 319 - start/stop freeze of reverb tail \, using 1 or 0
+;
+#X text 507 372 - bypass the reverb processing \, using a 1 or 0;
+#X text 491 227 - level of unprocessed signal \, between 0 and 1 (default:
+0);
+#X text 495 182 - level of reverbed signal \, between 0 and 1 (default:
+0.3);
+#X text 518 91 - amount of damping of room's surfaces (default: 0.5)
+;
+#X text 499 140 - stereo width of reverb (default: 1);
+#X text 523 37 - size of the room to be simulated (default=0.85);
+#X obj 114 126 loadbang;
+#X msg 114 167 damping 0.01;
+#X connect 0 0 4 0;
+#X connect 1 0 4 1;
+#X connect 4 0 3 0;
+#X connect 4 1 2 0;
+#X connect 21 0 22 0;
+#X connect 22 0 4 0;
+#X restore 313 557 pd master-fx;
+#X obj 41 390 loadbang;
+#X msg 41 468 \; pd dsp 1;
+#X obj 41 429 delay 8000;
+#X obj 311 79 expr max($f1-0.3 \, 0);
+#X obj 663 221 expr max($f1-0.3 \, 0);
+#X obj 896 382 expr max($f1-0.3 \, 0);
+#X obj 6 159 my-resonator~ 63 25 0;
+#X obj 358 299 my-resonator~ 72 16 16;
+#X obj 591 462 my-resonator~ 66 0 25;
+#X connect 1 0 16 0;
+#X connect 2 1 13 0;
+#X connect 2 3 14 0;
+#X connect 2 6 15 0;
+#X connect 4 0 18 0;
+#X connect 5 0 17 0;
+#X connect 6 0 16 1;
+#X connect 7 0 17 1;
+#X connect 8 0 18 1;
+#X connect 9 0 3 0;
+#X connect 9 1 3 1;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X connect 13 0 6 0;
+#X connect 14 0 7 0;
+#X connect 15 0 8 0;
+#X connect 16 0 9 0;
+#X connect 16 1 9 1;
+#X connect 17 0 9 0;
+#X connect 17 1 9 1;
+#X connect 18 0 9 0;
+#X connect 18 1 9 1;
