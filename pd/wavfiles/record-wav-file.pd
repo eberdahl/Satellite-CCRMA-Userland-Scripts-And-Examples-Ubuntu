@@ -1,0 +1,13 @@
+#N canvas 759 187 413 245 24;
+#X obj 11 125 adc~;
+#X obj 80 198 writesf~ 1;
+#X msg 163 17 open mysound.wav;
+#X text 84 17 Step 1;
+#X text 171 80 Step 2;
+#X msg 247 79 start;
+#X msg 306 140 stop;
+#X text 227 141 Step 3;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;

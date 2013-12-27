@@ -1,0 +1,82 @@
+#N canvas 0 0 1440 802 12;
+#X msg 132 89 \; pd dsp 0;
+#X text 74 127 ON;
+#X text 152 125 OFF;
+#X obj 392 122 tgl 20 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 49 89 \; pd dsp 1;
+#X obj 946 428 line~;
+#X floatatom 974 351 0 0 0 0 - - -;
+#X obj 946 316 dbtorms;
+#X floatatom 946 270 0 0 160 0 - - -;
+#X msg 946 402 \$1 4;
+#X obj 918 550 clip~ -1 1;
+#X obj 918 598 dac~;
+#X obj 946 232 + 100;
+#X floatatom 964 126 0 -100 60 0 - - -;
+#X text 1036 125 Set boost gain in dB (from -100 to +60 dB).;
+#X text 1035 266 Here we calculate a gain for the multiplier (*~) using
+a dbtorms object (acronym for "dB to RMS"). 100 dB is normalized to
+one \, and zero dB artificially outputs a true 0 (that's why we added
+a "+100" arithmetic operation).;
+#X obj 348 312 line~;
+#X msg 348 278 \$1 4;
+#X obj 331 342 *~;
+#X obj 531 190 adc~;
+#X obj 348 171 == 0;
+#X obj 157 281 readsf~;
+#X msg 222 223 start;
+#X msg 222 247 stop;
+#X msg 157 191 open solo_man.wav;
+#X obj 423 311 line~;
+#X msg 423 277 \$1 4;
+#X obj 455 343 *~;
+#X obj 387 378 +~;
+#X obj 845 126 tgl 20 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 917 490 *~;
+#X text 739 101 Here we enable or disable the boost;
+#X obj 946 201 *;
+#X text 42 28 Stompbox design workshop \, CCRMA (Stanford University)
+2011;
+#X text 1019 549 Here we clip the signal between -1 and 1 \, bevause
+dac only accepts values between these two (in fact \, this is done
+automatically);
+#X text 42 12 VOLUME / BOOST;
+#X text 420 116 Here we select the input source (adc or file);
+#X text 53 162 Every time we switch \, we need to reopen the file;
+#X text 464 260 **;
+#X text 384 261 **;
+#X text 115 604 Add the "message delay" plus "line~" objects in order
+to avoid artifacts when multiplying (this can be avoided by using "mull~"
+when multiplying).;
+#X text 992 392 **;
+#X text 93 603 **;
+#X text 41 44 by Esteban Maestre;
+#X connect 3 0 20 0;
+#X connect 3 0 26 0;
+#X connect 5 0 30 1;
+#X connect 7 0 6 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 11 0;
+#X connect 10 0 11 1;
+#X connect 12 0 8 0;
+#X connect 13 0 32 1;
+#X connect 16 0 18 1;
+#X connect 17 0 16 0;
+#X connect 18 0 28 0;
+#X connect 19 0 27 1;
+#X connect 20 0 17 0;
+#X connect 21 0 18 0;
+#X connect 22 0 21 0;
+#X connect 23 0 21 0;
+#X connect 24 0 21 0;
+#X connect 25 0 27 0;
+#X connect 26 0 25 0;
+#X connect 27 0 28 1;
+#X connect 28 0 30 0;
+#X connect 29 0 32 0;
+#X connect 30 0 10 0;
+#X connect 32 0 12 0;

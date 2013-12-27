@@ -1,0 +1,181 @@
+#N canvas 0 57 1440 830 10;
+#X msg 118 17 \; pd dsp 0;
+#X text 53 52 ON;
+#X text 135 52 OFF;
+#X msg 34 17 \; pd dsp 1;
+#X obj 163 698 dac~;
+#X obj 176 586 tgl 20 0 empty empty empty 17 7 0 10 -203904 -1 -1 0
+1;
+#X obj 122 610 == 0;
+#X obj 163 669 +~;
+#X obj 105 640 mull~;
+#X obj 188 637 mull~;
+#X text 30 80 Read a file and play in a loop;
+#X text 31 -38 Stompbox design workshop \, CCRMA (Stanford University)
+2011;
+#X obj 280 17 dsp;
+#X floatatom 280 49 5 0 0 0 - - -;
+#X text 321 55 % cpu;
+#X text 163 562 Bypass;
+#X msg 1303 23 phase \$1;
+#X obj 1303 0 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 1303 70 units \$1;
+#X obj 1303 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 1303 119 dbrange \$1;
+#X floatatom 1303 95 5 0 0 0 - - -;
+#X floatatom 1303 143 5 0 0 0 - - -;
+#X msg 1303 164 amprange \$1;
+#X obj 1151 187 filterplot.mmb \$0-plot;
+#X obj 512 35 mtof;
+#X obj 514 12 hsl 128 15 0 127 0 1 empty empty frequency 2 8 0 10 -260097
+-1 -1 8100 1;
+#X obj 561 30 hsl 128 15 0 10 0 1 empty empty Q/BW/Slope 2 8 0 10 -257985
+-1 -1 1300 1;
+#X obj 558 58 t b f;
+#X obj 609 75 t b f;
+#X obj 612 53 hsl 128 15 0.1 24 0 1 empty empty gain 2 8 0 10 -4034
+-1 -1 2200 1;
+#X msg 34 101 0;
+#X msg 75 101 1;
+#X obj 105 164 readsf~;
+#X msg 106 101 open guitar1.wav;
+#X obj 42 138 t b b;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-plot 500 float 0;
+#X coords 0 1 499 -1 500 140 1;
+#X restore 784 -1 graph;
+#X obj 332 251 biquadm.mmb~;
+#X msg 446 227 interp \$1;
+#X obj 479 203 loadbang;
+#X obj 271 152 hsl 128 15 100 140 0 1 empty empty pre-gain 2 8 0 10
+-4032 -1 -1 6900 1;
+#X obj 268 175 dbtorms;
+#X obj 255 205 mull~;
+#X text 30 -56 SIMPLE DISTORTION;
+#X text 31 -19 by Esteban Maestre (filter patches/externals by .mmb)
+;
+#X obj 329 309 tanh~;
+#X text 724 211 comment;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$1-plot 500 float 0;
+#X coords 0 1 499 -1 500 140 1;
+#X restore 781 349 graph;
+#X obj 528 384 mtof;
+#X obj 530 362 hsl 128 15 0 127 0 1 empty empty frequency 2 8 0 10
+-260097 -1 -1 8500 1;
+#X obj 577 386 hsl 128 15 0.1 20 0 1 empty empty Q/BW/Slope 2 8 0 10
+-257985 -1 -1 500 1;
+#X obj 574 412 t b f;
+#X obj 625 433 t b f;
+#X obj 628 407 hsl 128 15 0 24 0 1 empty empty gain 2 8 0 10 -4034
+-1 -1 2300 1;
+#X obj 332 483 biquadm.mmb~;
+#X msg 427 458 interp \$1;
+#X obj 428 434 loadbang;
+#X obj 558 467 filtercoeff.mmb bandpass;
+#X msg 1304 363 phase \$1;
+#X obj 1304 340 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X msg 1304 410 units \$1;
+#X obj 1304 388 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X msg 1304 459 dbrange \$1;
+#X floatatom 1304 435 5 0 0 0 - - -;
+#X floatatom 1304 483 5 0 0 0 - - -;
+#X msg 1304 504 amprange \$1;
+#X obj 1159 532 filterplot.mmb \$1-plot;
+#X obj 348 513 hsl 128 15 60 140 0 1 empty empty post-gain 2 8 0 10
+-261234 -1 -1 6100 1;
+#X obj 345 536 dbtorms;
+#X obj 332 566 mull~;
+#X obj 316 376 tgl 20 0 empty empty empty 17 7 0 10 -203904 -1 -1 0
+1;
+#X obj 215 409 == 0;
+#X obj 138 427 mull~;
+#X obj 285 415 mull~;
+#X text 339 379 Distortion/Fuzz;
+#X obj 253 465 +~;
+#X obj 138 289 clip~ -0.1 0.1;
+#X obj 173 329 hsl 128 15 80 140 0 1 empty empty fuzz-gain 2 8 0 10
+-4032 -1 -1 7400 1;
+#X obj 170 352 dbtorms;
+#X obj 157 382 mull~;
+#X obj 542 108 filtercoeff.mmb bandpass;
+#X connect 5 0 6 0;
+#X connect 5 0 9 1;
+#X connect 6 0 8 1;
+#X connect 7 0 4 1;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 1;
+#X connect 12 0 13 0;
+#X connect 16 0 24 1;
+#X connect 17 0 16 0;
+#X connect 18 0 24 1;
+#X connect 19 0 18 0;
+#X connect 20 0 24 1;
+#X connect 21 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 1;
+#X connect 25 0 80 0;
+#X connect 26 0 25 0;
+#X connect 27 0 28 0;
+#X connect 28 0 80 0;
+#X connect 28 1 80 1;
+#X connect 29 0 80 0;
+#X connect 29 1 80 2;
+#X connect 30 0 29 0;
+#X connect 31 0 33 0;
+#X connect 32 0 33 0;
+#X connect 33 0 42 0;
+#X connect 33 0 8 0;
+#X connect 33 1 35 0;
+#X connect 34 0 33 0;
+#X connect 35 0 32 0;
+#X connect 35 1 34 0;
+#X connect 37 0 45 0;
+#X connect 37 0 76 0;
+#X connect 38 0 37 1;
+#X connect 39 0 38 0;
+#X connect 40 0 41 0;
+#X connect 41 0 42 1;
+#X connect 42 0 37 0;
+#X connect 45 0 73 0;
+#X connect 48 0 57 0;
+#X connect 49 0 48 0;
+#X connect 50 0 51 0;
+#X connect 51 0 57 0;
+#X connect 51 1 57 1;
+#X connect 52 0 57 0;
+#X connect 52 1 57 2;
+#X connect 53 0 52 0;
+#X connect 54 0 69 0;
+#X connect 55 0 54 1;
+#X connect 56 0 55 0;
+#X connect 57 0 54 1;
+#X connect 57 0 66 0;
+#X connect 58 0 66 1;
+#X connect 59 0 58 0;
+#X connect 60 0 66 1;
+#X connect 61 0 60 0;
+#X connect 62 0 66 1;
+#X connect 63 0 62 0;
+#X connect 64 0 65 0;
+#X connect 65 0 66 1;
+#X connect 67 0 68 0;
+#X connect 68 0 69 1;
+#X connect 69 0 9 0;
+#X connect 70 0 71 0;
+#X connect 70 0 73 1;
+#X connect 71 0 72 1;
+#X connect 72 0 75 0;
+#X connect 73 0 75 1;
+#X connect 75 0 54 0;
+#X connect 76 0 79 0;
+#X connect 77 0 78 0;
+#X connect 78 0 79 1;
+#X connect 79 0 72 0;
+#X connect 80 0 37 1;
+#X connect 80 0 24 0;

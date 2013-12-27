@@ -1,0 +1,25 @@
+#N canvas 0 0 369 313 10;
+#X obj 55 100 inlet;
+#X text 13 78 True/False value;
+#X obj 160 100 inlet;
+#X text 160 79 Necessary time (ms);
+#X msg 109 182 1;
+#X obj 64 260 outlet;
+#X obj 85 229 pipe \$1;
+#X obj 55 182 t 0 b;
+#X msg 85 206 clear;
+#X obj 55 124 sel 0;
+#X obj 85 149 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 22 16 Output true (1) if the input remains true;
+#X text 22 30 for the given amount of time.;
+#X connect 0 0 9 0;
+#X connect 2 0 6 1;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 7 1 8 0;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 1 10 0;
+#X connect 10 0 4 0;

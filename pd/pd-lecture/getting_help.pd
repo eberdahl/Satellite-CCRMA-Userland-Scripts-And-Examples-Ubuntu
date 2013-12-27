@@ -1,0 +1,23 @@
+#N canvas 130 14 929 706 24;
+#X obj 103 56 moses;
+#X text 18 112 To get a list of all built-in objects \, right-click
+on;
+#X text 21 229 To set the properties of graphical objects \, right-click
+;
+#X text 21 10 To get help \, right-click on an object and choose 'Help'.
+;
+#X text 19 138 the whitespace of the patch and choose 'Help'.;
+#X text 21 257 on the object and choose 'Properties';
+#X floatatom 86 303 5 0 0 0 - - -;
+#X obj 198 294 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 253 297 vu 15 120 empty empty -1 -8 0 8 -66577 -1 1 0;
+#X text 31 476 The 'Help' menu on the top right of this patch takes
+you;
+#X text 31 501 to the official Pd Documentation as well as many example
+;
+#X text 31 525 patches. Use them! Copy and paste!;
+#X text 31 586 See the 'Resources' section of the course webpage for
+more;
+#X text 33 611 pointers to Pd resources on the web.;
+#X text 32 659 Finally \, if you get stuck \, ASK FOR HELP!;

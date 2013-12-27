@@ -1,0 +1,40 @@
+#N canvas 677 228 488 350 10;
+#X obj 28 178 shell;
+#X msg 28 16 omxplayer HDS.mp4;
+#X msg 68 37 omxplayer HDS.mov;
+#X obj 3 234 print;
+#X text 181 229 Demo for playing H.264-encoded video files;
+#X text 181 242 on Raspberry Pi.;
+#X text 222 255 - Edgar Berdahl \, Dec. 2012;
+#X text 23 302 PS. Apparently it will only work well with H.264-encoded
+files or MPEG2. For each of these \, it should be necessary to buy
+a license that is locked to the Raspberry pi board. However \, I found
+that it worked anyway :);
+#X obj 55 226 print DONE;
+#X obj 28 107 spigot;
+#X obj 305 140 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 305 117 loadbang;
+#X msg 68 203 1;
+#X obj 28 129 t a b;
+#X msg 55 152 0;
+#X text 323 139 omxplayer not currently in use;
+#X msg 241 46 pkill omxplayer;
+#X obj 241 68 delay 3000;
+#X msg 241 90 1;
+#X connect 0 0 3 0;
+#X connect 0 1 8 0;
+#X connect 0 1 12 0;
+#X connect 1 0 9 0;
+#X connect 2 0 9 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 13 0 0 0;
+#X connect 13 1 14 0;
+#X connect 14 0 10 0;
+#X connect 16 0 0 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 10 0;

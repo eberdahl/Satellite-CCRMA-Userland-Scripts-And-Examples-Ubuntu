@@ -1,0 +1,119 @@
+#N canvas 37 67 1196 769 24;
+#X obj -507 10 cnv 15 620 100 empty empty empty 20 12 0 14 -228992
+-66577 0;
+#X obj -502 335 cnv 15 620 250 empty empty empty 20 12 0 14 -225271
+-66577 0;
+#X obj -101 118 cnv 15 325 175 empty empty empty 20 12 0 14 -228992
+-66577 0;
+#X obj -499 76 send tofu;
+#X msg -499 19 tau kwa;
+#X text -351 21 Messages can be packed into;
+#X text -353 47 lists and sent to other;
+#X text -353 73 objects without patch cords;
+#X obj -96 126 receive tofu;
+#X obj -96 164 t b;
+#X obj -96 249 print what_time_is_it;
+#X msg -96 205 ?;
+#X obj -509 118 cnv 15 400 175 empty empty empty 20 12 0 14 -228992
+-66577 0;
+#X obj -508 126 receive tofu;
+#X obj -508 165 unpack s s;
+#X text -349 155 unpack separates;
+#X text -345 181 list elements;
+#X obj -508 249 print time;
+#X obj -363 212 print makan;
+#X text -29 159 receive objects;
+#X text -27 182 can be in any;
+#X text -29 206 subpatch;
+#X text -497 341 route matches the first element of a list;
+#X obj -495 548 print hye;
+#X obj -343 547 print maybe;
+#X obj -162 548 print yes;
+#X obj -14 548 print no;
+#X msg -495 375 2 na;
+#X msg -369 374 can not;
+#X msg -249 374 sam 1 am;
+#X msg -112 375 tony the tiger;
+#X obj -495 472 route 2;
+#X obj -343 472 route can sam;
+#X obj 234 14 cnv 15 270 250 empty empty empty 20 12 0 14 -257472 -66577
+0;
+#X msg 242 88 1 2 3 \, 4 5 6;
+#X obj 242 140 unpack 0 0 0;
+#X obj 242 182 pack 0 0 0;
+#X obj 242 227 print ladybugs;
+#X text 243 16 comma separates;
+#X text 243 40 multiple messages;
+#X obj 146 334 cnv 15 220 250 empty empty empty 20 12 0 14 -261681
+-66577 0;
+#X obj 159 505 spigot;
+#X obj 244 449 tgl 30 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X text 210 387 open/close;
+#X text 210 412 the spigot;
+#X floatatom 159 547 5 0 0 0 - - -;
+#X obj 159 349 vsl 30 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 373 292 cnv 15 300 170 empty empty empty 20 12 0 14 -262131
+-66577 0;
+#X obj 378 349 sel 2 4 8;
+#X text 460 290 select outputs;
+#X text 459 314 a bang when an;
+#X text 547 418 argument;
+#X obj 378 400 bng 25 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 421 404 bng 25 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 464 401 bng 25 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 508 420 bng 25 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 378 300 5 0 0 0 - - -;
+#X text 520 345 input;
+#X text 522 369 number;
+#X text 523 394 matches an;
+#X obj 158 593 cnv 15 300 170 empty empty empty 20 12 0 14 -225280
+-66577 0;
+#X obj 165 598 bng 25 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 207 601 5 0 0 0 - - -;
+#X obj 207 666 float;
+#X text 338 668 a number;
+#X floatatom 277 625 5 0 0 0 - - -;
+#X floatatom 207 714 5 0 0 0 - - -;
+#X text 368 622 float;
+#X text 365 644 stores;
+#X obj 396 723 5.5;
+#X text 330 725 also;
+#X connect 4 0 3 0;
+#X connect 8 0 9 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 17 0;
+#X connect 14 1 18 0;
+#X connect 27 0 31 0;
+#X connect 28 0 32 0;
+#X connect 29 0 32 0;
+#X connect 30 0 32 0;
+#X connect 31 0 23 0;
+#X connect 32 0 24 0;
+#X connect 32 1 25 0;
+#X connect 32 2 26 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 35 1 36 1;
+#X connect 35 2 36 2;
+#X connect 36 0 37 0;
+#X connect 41 0 45 0;
+#X connect 42 0 41 1;
+#X connect 46 0 41 0;
+#X connect 48 0 52 0;
+#X connect 48 1 53 0;
+#X connect 48 2 54 0;
+#X connect 48 3 55 0;
+#X connect 56 0 48 0;
+#X connect 61 0 63 0;
+#X connect 62 0 63 0;
+#X connect 63 0 66 0;
+#X connect 65 0 63 1;

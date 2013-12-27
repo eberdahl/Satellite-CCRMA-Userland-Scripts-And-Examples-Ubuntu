@@ -1,0 +1,82 @@
+#N canvas 0 0 1251 889 24;
+#X obj 52 693 dac~;
+#X msg 29 825 \; pd dsp 0;
+#X msg 30 769 \; pd dsp 1;
+#X obj 61 65 osc~ 220;
+#X obj 62 150 *~ 0;
+#X obj 417 25 cnv 15 550 120 empty empty empty 20 12 0 14 -101905 -66577
+0;
+#X text 422 26 ~ objects generate signals;
+#X text 420 65 calculate output at an audio sample;
+#X text 420 90 rate - unlike control objects \, they;
+#X text 421 114 are "always" generating output;
+#X obj 416 158 cnv 15 550 260 empty empty empty 20 12 0 14 -101905
+-66577 0;
+#X text 420 157 We have to be careful mixing signal;
+#X text 420 186 & control objects for a few reasons;
+#X text 420 215 1 You normally can't connect a sig;
+#X text 418 283 2 The rate of change of control;
+#X text 420 244 object to a control object;
+#X text 417 311 objects is very slow wrt audio;
+#X text 415 336 sample rate \, and changes happen;
+#X text 417 388 calculation. The result is clicking.;
+#X text 417 364 between "chunks" of audio;
+#X obj 161 778 cnv 15 550 100 empty empty empty 20 12 0 14 -101905
+-66577 0;
+#X text 163 787 These special messages tell Pd;
+#X text 165 842 You can do the same in the Pd window;
+#X msg 288 58 0.1;
+#X text 163 815 to start and stop calculating audio.;
+#X msg 344 58 0.5;
+#X msg 233 58 0;
+#X obj 126 501 *~;
+#X obj 126 358 osc~ 500;
+#X msg 247 394 0.1;
+#X msg 307 394 0.5;
+#X msg 190 395 0;
+#X obj 190 471 line~;
+#X msg 190 435 \$1 50;
+#X obj 150 627 cnv 15 575 110 empty empty empty 20 12 0 14 -101905
+-66577 0;
+#X text 155 630 The dac~ object is the computer's;
+#X text 156 654 audio output device. It takes floats;
+#X text 157 679 between -1 and 1 Your computer only;
+#X text 159 704 has 1 sound card \, so only use 1 dac~!;
+#X obj 135 560 cnv 15 530 60 empty empty empty 20 12 0 14 -101905 -66577
+0;
+#X text 140 565 Signals are summed at inlets. No;
+#X text 140 593 need for a +~ object in this case.;
+#X obj 407 437 cnv 15 600 110 empty empty empty 20 12 0 14 -101905
+-66577 0;
+#X text 417 441 The line~ object takes a list of 2;
+#X text 418 464 numbers as input. It generates a signal;
+#X text 418 489 rate ramp to the first value in a time;
+#X text 419 514 of the second value in milliseconds.;
+#X obj 792 672 snapshot~;
+#X obj 921 589 metro 50;
+#X obj 792 624 phasor~ 0.1;
+#X floatatom 792 718 5 0 0 0 - - -;
+#X obj 921 560 tgl 25 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 785 753 cnv 15 450 60 empty empty empty 20 12 0 14 -101905 -66577
+0;
+#X text 783 755 snapshot~ lets you inspect the;
+#X text 811 782 value of a signal object;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 4 0 0 1;
+#X connect 23 0 4 1;
+#X connect 25 0 4 1;
+#X connect 26 0 4 1;
+#X connect 27 0 0 0;
+#X connect 27 0 0 1;
+#X connect 28 0 27 0;
+#X connect 29 0 33 0;
+#X connect 30 0 33 0;
+#X connect 31 0 33 0;
+#X connect 32 0 27 1;
+#X connect 33 0 32 0;
+#X connect 47 0 50 0;
+#X connect 48 0 47 0;
+#X connect 49 0 47 0;
+#X connect 51 0 48 0;

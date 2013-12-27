@@ -1,0 +1,42 @@
+#N canvas 305 496 779 318 10;
+#X obj 232 217 soundfiler;
+#X obj 308 18 inlet;
+#X text 308 3 Send sound file name to load;
+#X obj 41 247 float;
+#X text 123 24 Storage;
+#X obj 122 43 table \$1;
+#X obj 408 108 makefilename \$1;
+#X msg 408 76 0;
+#X text 433 25 Construct the message;
+#X text 438 39 read -resize [filename] [tablename];
+#X obj 302 140 pack s s s s;
+#X msg 282 101 symbol -resize;
+#X msg 197 101 symbol read;
+#X obj 308 50 trigger b b a b;
+#X obj 232 194 route list;
+#X text 444 64 comment;
+#X text 522 100 This is the table name \, an argument to this abstraction
+;
+#X obj 41 225 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 41 271 send sample-length;
+#X text 85 243 Remember size (num. samples) of sound file so we can
+ask later;
+#X obj 41 161 receive ask-length;
+#X obj 41 188 select \$1;
+#X connect 0 0 3 1;
+#X connect 1 0 13 0;
+#X connect 3 0 18 0;
+#X connect 6 0 10 3;
+#X connect 7 0 6 0;
+#X connect 10 0 14 0;
+#X connect 11 0 10 1;
+#X connect 12 0 10 0;
+#X connect 13 0 12 0;
+#X connect 13 1 11 0;
+#X connect 13 2 10 2;
+#X connect 13 3 7 0;
+#X connect 14 0 0 0;
+#X connect 17 0 3 0;
+#X connect 20 0 21 0;
+#X connect 21 0 17 0;

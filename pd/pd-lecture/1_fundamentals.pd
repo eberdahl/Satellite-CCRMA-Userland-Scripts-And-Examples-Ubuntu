@@ -1,0 +1,64 @@
+#N canvas 0 0 1253 838 24;
+#X obj 17 115 cnv 15 550 300 empty empty empty 20 12 0 14 -101905 -66577
+0;
+#X obj 48 123 +;
+#X obj 122 123 metro;
+#X obj 19 453 cnv 15 550 300 empty empty empty 20 12 0 14 -230710 -66577
+0;
+#X msg 202 459 1;
+#X msg 284 459 bang;
+#X msg 59 459 rutabaga;
+#X obj 643 180 cnv 15 600 250 empty empty empty 20 12 0 14 -93750 -66577
+0;
+#X floatatom 868 191 5 0 0 0 - - -;
+#X obj 632 484 cnv 15 585 250 empty empty empty 20 12 0 14 -228880
+-66577 0;
+#X obj 651 493 hsl 128 30 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 797 493 tgl 40 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 861 493 hradio 30 1 0 8 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 1194 562 vsl 20 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 274 123 moses;
+#X text 31 164 OBJECTS are rectangular boxes with;
+#X text 31 190 thickened tabs for INLETS and;
+#X text 31 216 OUTLETS.;
+#X text 31 285 function \, like addition \, parsing;
+#X text 31 311 lists \, or playing sound files.;
+#X text 34 351 Make a new object by typing CTL-1;
+#X text 43 375 or from the Put menu;
+#X text 24 11 When you launch Pd \, you can create a new;
+#X text 24 37 patch. A patch is a CANVAS \, on which you;
+#X text 24 63 can place OBJECTS and MESSAGES.;
+#X text 651 11 Patches have an EDIT mode \, where you can;
+#X text 651 37 move things around \, add objects and make;
+#X text 634 63 connections. When NOT in EDIT mode \, the;
+#X text 649 85 patch is locked \, and you can interact;
+#X text 649 111 with GUI elements but can't edit the;
+#X text 649 137 patch. Switch between modes with CTL-e.;
+#X text 643 212 Number boxes are square with a cropped;
+#X text 643 238 top right corner. They can display and;
+#X text 643 264 output numbers.;
+#X text 643 290 When the patch is locked \, the value in;
+#X text 643 316 the box can be changed with the mouse.;
+#X text 643 342 Hold down SHIFT and scroll for decimals.;
+#X text 653 379 Make a new number box with CTL-3 or;
+#X text 653 405 from the Put menu.;
+#X text 27 492 Messages are passed between objects.;
+#X text 27 518 Message boxes look like object boxes;
+#X text 27 544 but their right side is shaped like;
+#X text 27 570 the Knoll.;
+#X text 22 600 When the patch is locked \, clicking;
+#X text 23 621 on a message box causes the message;
+#X text 25 644 to be sent from its outlet to any;
+#X text 39 665 objects that it is connected to.;
+#X text 35 704 Make a new message box by typing;
+#X text 73 726 CTL-2 or from the Put menu.;
+#X text 642 534 Some objects have special GUI elements.;
+#X text 643 585 They can be manipulated with the;
+#X text 650 613 mouse when the patch is locked.;
+#X text 663 693 normally display and output values.;
+#X text 663 667 Like number boxes \, GUI objects;
+#X text 31 259 Objects are units that perform a;

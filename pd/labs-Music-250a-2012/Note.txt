@@ -1,0 +1,4 @@
+These are the laboratory exercises from Stanford University's Music 250A class
+in Autumn 2012.
+
+Please see http://ccrma.stanford.edu/courses/250a

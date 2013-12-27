@@ -1,0 +1,88 @@
+#N canvas 168 39 766 730 10;
+#X obj 122 190 inlet;
+#X obj 122 302 line~;
+#X text 176 249 Numbers seem to come out of the AVRmini every 3-9ms
+\, usually every 4;
+#X text 172 284 Convert to signal with line~ so it won't be a step
+function;
+#X obj 545 0 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X msg 545 22 \; pd dsp \$1;
+#X floatatom 247 422 5 0 0 0 - - -;
+#X text 175 623 Low-freq part;
+#X text 20 618 High-freq part;
+#X floatatom 106 427 5 0 0 0 - - -;
+#X obj 123 331 lop~ 660;
+#X obj 122 354 lop~ 660;
+#X text 189 337 A few poles of 660Hz lowpass for good measure;
+#X obj 41 590 outlet~;
+#X obj 184 593 outlet~;
+#X text 25 637 Impact;
+#X text 190 645 Tilt;
+#X msg 122 267 \$1 4;
+#X obj 501 555 snapshot~;
+#X obj 501 143 inlet;
+#X obj 501 165 t b 0;
+#X obj 551 228 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 502 578 5 0 0 0 - - -;
+#X obj 501 190 delay 500;
+#X text 177 221 Remove dc offset;
+#X text 114 -26 A crossover filter for accelerometer data \, dividing
+the;
+#X text 113 -11 low frequency components from the high frequency components.
+;
+#X text 112 21 Note that the filtering is done in pd's signal domain
+\, so;
+#X text 478 113 Calibrate: set zero point;
+#X text 478 126 of tilt to current values.;
+#X text 113 34 COMPUTE AUDIO must be on for this patch to work.;
+#X obj 184 445 lop~ \$1;
+#X obj 184 467 lop~ \$1;
+#X obj 184 489 lop~ \$1;
+#X obj 184 510 lop~ \$1;
+#X obj 43 441 hip~ \$2;
+#X obj 42 466 hip~ \$2;
+#X obj 41 488 hip~ \$2;
+#X obj 41 510 hip~ \$2;
+#X text 112 57 The low and high frequency cutoffs are the 2 creation
+arguments. 5Hz and 20Hz are good starting values.;
+#X obj 196 170 inlet;
+#X obj 320 176 inlet;
+#X text 163 150 Low frequency cutoff;
+#X text 314 156 High frequency cutoff;
+#X obj 122 220 - 32768;
+#X connect 0 0 44 0;
+#X connect 1 0 10 0;
+#X connect 4 0 5 0;
+#X connect 6 0 31 1;
+#X connect 6 0 32 1;
+#X connect 6 0 33 1;
+#X connect 6 0 34 1;
+#X connect 9 0 35 1;
+#X connect 9 0 36 1;
+#X connect 9 0 37 1;
+#X connect 9 0 38 1;
+#X connect 10 0 11 0;
+#X connect 11 0 31 0;
+#X connect 11 0 35 0;
+#X connect 17 0 1 0;
+#X connect 18 0 22 0;
+#X connect 18 0 44 1;
+#X connect 19 0 20 0;
+#X connect 20 0 23 0;
+#X connect 20 1 44 1;
+#X connect 23 0 18 0;
+#X connect 23 0 21 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 14 0;
+#X connect 34 0 18 0;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 13 0;
+#X connect 40 0 6 0;
+#X connect 41 0 9 0;
+#X connect 44 0 17 0;
