@@ -1,0 +1,27 @@
+#N canvas 588 364 587 307 10;
+#X obj 24 19 inlet;
+#X obj 49 270 outlet~;
+#X obj 24 213 readsf~;
+#X obj 24 51 t b b f;
+#X obj 49 243 *~ 0.1;
+#X msg 24 127 start;
+#X obj 110 136 prepend \$1;
+#X obj 109 159 prepend open;
+#X msg 110 97 dummy;
+#X text 180 125 Argument to abstraction replaces \$1 in objects (but
+not message boxes!);
+#X text 151 88 We need to use this just to trigger output from prepend
+-- readsf~ ignores the "dummy" element of the list it receives.;
+#X text 208 184 <- To understand better what's going on \, connect
+the "prepend open" object to the print here.;
+#X obj 121 188 print opencmd;
+#X connect 0 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 3 1 8 0;
+#X connect 3 2 4 1;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X connect 8 0 6 0;

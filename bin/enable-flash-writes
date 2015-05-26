@@ -5,6 +5,7 @@
 #
 #
 # Copyright (C) Feb. 2012 Edgar Berdahl for the Satelite CCRMA project
+# And updated 2015 by Edgar Berdahl (C) Louisiana State University
 #
 # The above copyright notice including the copyright holders and this
 # permission notice shall be included in all copies, substantial
@@ -33,16 +34,15 @@
 
 
 # echo "If you need to enter a password, it should be tmppwd"
-mount-boot-rw
-sudo cp /boot/config_no_aufs.txt /boot/config.txt
-mount-boot-ro
+sudo mount -o remount,rw /
+sudo cp /etc/handle-remount.rw /etc/handle-remount
+#mount-boot-rw
+#sudo cp /boot/config_no_aufs.txt /boot/config.txt
+#mount-boot-ro
 
-echo "As soon as you reboot, your kit will again start to remember changes"
-echo "made to your project."
+echo "Your kit now is no longer in read-only mode.  You can now edit files"
+echo "but remember that you should run disable-flash-writes again once"
+echo "your project is completely finished in order to protect your SD card."
 echo ""
-read -p "Press <ENTER> to show that you understand before your kit reboots..."
-
-
 echo ""
 echo "*Exiting* autonomous mode ..."
-sudo reboot

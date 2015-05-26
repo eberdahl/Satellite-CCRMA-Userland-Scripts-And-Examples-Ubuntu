@@ -4,7 +4,8 @@
 #
 #
 #
-# Copyright (C) Feb. 2012 Edgar Berdahl for the Satelite CCRMA project
+# Copyright (C) Feb. 2012 Edgar Berdahl for the Satelite CCRMA project, TU Berlin
+# Upated 2015 by Edgar Berdahl, Louisiana State University
 #
 # The above copyright notice including the copyright holders and this
 # permission notice shall be included in all copies, substantial
@@ -39,17 +40,16 @@ read -p "<ENTER> to continue..."
 
 
 # echo "If you need to enter a password, it should be tmppwd"
-mount-boot-rw
-sudo cp /boot/config_with_aufs.txt /boot/config.txt
-mount-boot-ro
+sudo cp /etc/handle-remount.ro /etc/handle-remount
+sudo mount -o remount,ro /
+#mount-boot-rw
+#sudo cp /boot/config_with_aufs.txt /boot/config.txt
+#mount-boot-ro
 
 echo ""
-echo "As soon as you reboot, your kit will no longer remember any changes that"
-echo "you make unless you login and run the command: enable-flash-writes"
+echo "Now your kit will run in read-only mode unless you later run"
+echo "the command enable-flash-writes."
 echo ""
-read -p "Press <ENTER> to show that you understand before your kit reboots..."
-
 
 echo ""
 echo "Entering autonomous mode ..."
-sudo reboot

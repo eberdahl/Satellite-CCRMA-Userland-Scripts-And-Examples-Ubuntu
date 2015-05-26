@@ -35,6 +35,8 @@ killall alsa_out
 killall pdextended
 killall jackd
 killall pd
-
+killall chuck
+killall sclang
+killall scsynth
 
 

@@ -34,6 +34,10 @@
 
 
 
-#echo "If you need to enter a password, it should be tmppwd"
-sudo umount /dev/mmcblk0p1
-sudo mount -o ro /dev/mmcblk0p1 /boot
+echo "If you need to enter a password, it should be tmppwd"
+sudo mount -o remount,ro /boot
+
+
+# The old way:
+#sudo umount /dev/mmcblk0p1
+#sudo mount -o ro /dev/mmcblk0p1 /boot
