@@ -1,0 +1,99 @@
+#N canvas 72 66 982 721 10;
+#X obj 405 249 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 500 1;
+#X text 428 427 comment;
+#X obj 407 304 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 11000 1;
+#X obj 405 363 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 1500 1;
+#X obj 406 428 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 4000 1;
+#X obj 406 488 hsl 128 15 0 128 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 3969 1;
+#X obj 427 169 loadbang;
+#X obj 50 507 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 21 478 noteOn \, amp;
+#X obj 33 622 dac~;
+#X msg 547 28 \; pd dsp 1;
+#X msg 544 74 \; pd dsp 0;
+#X msg 402 272 stkCtrl 1 \$1;
+#X msg 404 332 stkCtrl 2 \$1;
+#X msg 402 391 stkCtrl 4 \$1;
+#X msg 403 456 stkCtrl 11 \$1;
+#X floatatom 148 429 5 0 0 0 - - -;
+#X obj 148 282 vsl 15 128 0 1500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 5588 1;
+#X text 77 272 Frequency;
+#X text 14 449 CLICK TO PLAY;
+#X msg 20 534 0;
+#X text 555 363 Noise Gain;
+#X text 545 249 Vibrato Gain;
+#X text -3 463 (then set Pressure);
+#X msg 357 350 15;
+#X msg 372 248 5;
+#X text 550 306 Reed Stiffness;
+#X obj 407 551 hsl 128 15 0 128 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 992 1;
+#X obj 408 610 hsl 128 15 0 128 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X msg 405 638 stkCtrl 128 \$1;
+#X text 553 609 Breath Pressure (Volume);
+#X text 184 29 Saxofony~;
+#X text 183 44 Hybrid Wind Instrument Model;
+#X obj 32 586 Saxofony~;
+#X msg 148 244 660;
+#X text 554 429 Blow Position;
+#X text 551 487 Reed Aperture;
+#X text 552 550 Vibrato Frequency;
+#X msg 403 516 stkCtrl 26 \$1;
+#X msg 404 579 stkCtrl 29 \$1;
+#X msg 361 592 0;
+#X msg 361 520 10;
+#X msg 364 463 40;
+#X msg 363 299 110;
+#X msg 51 534 100;
+#X msg 365 399 40;
+#X obj 148 494 line;
+#X obj 148 460 pack 0 50;
+#X floatatom 206 432 5 0 0 0 - - -;
+#X text 186 413 Gliss Time;
+#X connect 0 0 12 0;
+#X connect 2 0 13 0;
+#X connect 3 0 14 0;
+#X connect 4 0 15 0;
+#X connect 5 0 38 0;
+#X connect 6 0 25 0;
+#X connect 6 0 43 0;
+#X connect 6 0 34 0;
+#X connect 6 0 42 0;
+#X connect 6 0 45 0;
+#X connect 6 0 24 0;
+#X connect 6 0 41 0;
+#X connect 7 0 44 0;
+#X connect 12 0 33 3;
+#X connect 13 0 33 3;
+#X connect 14 0 33 3;
+#X connect 15 0 33 3;
+#X connect 16 0 47 0;
+#X connect 17 0 16 0;
+#X connect 20 0 33 1;
+#X connect 24 0 3 0;
+#X connect 25 0 0 0;
+#X connect 27 0 39 0;
+#X connect 28 0 29 0;
+#X connect 29 0 33 3;
+#X connect 33 0 9 0;
+#X connect 33 0 9 1;
+#X connect 34 0 17 0;
+#X connect 38 0 33 3;
+#X connect 39 0 33 3;
+#X connect 40 0 28 0;
+#X connect 41 0 27 0;
+#X connect 42 0 5 0;
+#X connect 43 0 2 0;
+#X connect 44 0 33 1;
+#X connect 45 0 4 0;
+#X connect 46 0 33 2;
+#X connect 47 0 46 0;
+#X connect 48 0 47 1;

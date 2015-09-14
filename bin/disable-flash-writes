@@ -41,6 +41,9 @@ read -p "<ENTER> to continue..."
 
 # echo "If you need to enter a password, it should be tmppwd"
 sudo cp /etc/handle-remount.ro /etc/handle-remount
+
+sudo /etc/tmpfs-remap
+
 sudo mount -o remount,ro /
 #mount-boot-rw
 #sudo cp /boot/config_with_aufs.txt /boot/config.txt

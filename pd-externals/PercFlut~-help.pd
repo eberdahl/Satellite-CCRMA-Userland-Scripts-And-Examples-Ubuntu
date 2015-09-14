@@ -1,0 +1,77 @@
+#N canvas 72 66 982 721 10;
+#X obj 342 259 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 400 1;
+#X text 365 437 comment;
+#X obj 344 314 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 11000 1;
+#X obj 342 373 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 10000 1;
+#X obj 343 438 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 3500 1;
+#X obj 343 498 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 9200 1;
+#X obj 364 179 loadbang;
+#X obj 33 622 dac~;
+#X msg 547 28 \; pd dsp 1;
+#X msg 544 74 \; pd dsp 0;
+#X msg 339 282 stkCtrl 1 \$1;
+#X msg 341 342 stkCtrl 2 \$1;
+#X msg 339 401 stkCtrl 4 \$1;
+#X msg 340 466 stkCtrl 11 \$1;
+#X msg 340 526 stkCtrl 128 \$1;
+#X floatatom 82 450 5 0 0 0 - - -;
+#X obj 82 303 vsl 15 128 0 1500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 3725 1;
+#X text 11 293 Frequency;
+#X msg 300 309 110;
+#X msg 302 409 35;
+#X msg 295 360 100;
+#X obj 83 511 line;
+#X obj 82 484 pack 0 50;
+#X floatatom 140 429 5 0 0 0 - - -;
+#X text 133 405 gliss time;
+#X msg 301 473 0;
+#X msg 308 258 4;
+#X obj 32 586 PercFlut~;
+#X text 185 29 PercFlut~;
+#X text 185 47 Percussive Flute FM Synthesis;
+#X text 185 61 Algorithm 4 of the TX81Z;
+#X text 483 259 LFO Depth;
+#X text 485 314 Total Modulator Index;
+#X text 484 369 Modulator CrossFade;
+#X text 485 441 LFO Speed;
+#X text 487 497 ADSR 2 & 4 Target;
+#X msg 83 266 440;
+#X obj -2 401 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X text -24 380 Amplitude;
+#X connect 0 0 10 0;
+#X connect 2 0 11 0;
+#X connect 3 0 12 0;
+#X connect 4 0 13 0;
+#X connect 5 0 14 0;
+#X connect 6 0 26 0;
+#X connect 6 0 18 0;
+#X connect 6 0 36 0;
+#X connect 6 0 25 0;
+#X connect 6 0 19 0;
+#X connect 6 0 20 0;
+#X connect 10 0 27 3;
+#X connect 11 0 27 3;
+#X connect 12 0 27 3;
+#X connect 13 0 27 3;
+#X connect 14 0 27 3;
+#X connect 15 0 22 0;
+#X connect 16 0 15 0;
+#X connect 18 0 2 0;
+#X connect 19 0 4 0;
+#X connect 20 0 3 0;
+#X connect 21 0 27 2;
+#X connect 22 0 21 0;
+#X connect 23 0 22 1;
+#X connect 25 0 5 0;
+#X connect 26 0 0 0;
+#X connect 27 0 7 0;
+#X connect 27 0 7 1;
+#X connect 36 0 16 0;
+#X connect 37 0 27 1;

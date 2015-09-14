@@ -1,0 +1,101 @@
+#N canvas 72 66 982 721 10;
+#X obj 342 259 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 7500 1;
+#X text 363 383 comment;
+#X obj 340 319 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 11000 1;
+#X obj 341 384 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 11000 1;
+#X obj 364 179 loadbang;
+#X obj 33 622 dac~;
+#X msg 547 28 \; pd dsp 1;
+#X msg 544 74 \; pd dsp 0;
+#X msg 339 282 stkCtrl 1 \$1;
+#X floatatom 108 425 5 0 0 0 - - -;
+#X obj 108 278 vsl 15 128 0 1500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 3725 1;
+#X text 37 268 Frequency;
+#X obj 335 622 hradio 15 1 0 9 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X floatatom 292 642 5 0 0 0 - - -;
+#X msg 299 413 0;
+#X msg 299 307 110;
+#X msg 301 260 75;
+#X msg 301 356 110;
+#X obj 47 586 ModalBar~;
+#X text 482 259 Direct Stick Mix;
+#X text 482 315 Stick Hardness;
+#X text 483 387 Stick Position;
+#X text 364 443 comment;
+#X obj 342 444 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X text 363 500 comment;
+#X obj 341 501 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X msg 338 529 stkCtrl 11 \$1;
+#X msg 335 349 stkCtrl 2 \$1;
+#X msg 338 412 stkCtrl 4 \$1;
+#X msg 339 472 stkCtrl 7 \$1;
+#X text 484 447 Vibrato Frequency;
+#X text 483 504 Vibrato Gain;
+#X msg 335 649 stkCtrl 16 \$1;
+#X text 364 552 comment;
+#X obj 342 553 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X text 484 556 Volume;
+#X msg 339 581 stkCtrl 128 \$1;
+#X text 707 287 0 - Marimba;
+#X text 707 302 1 - Vibraphone;
+#X text 707 317 2 - Agogo;
+#X text 707 332 3 - Wood1;
+#X text 707 347 4 - Reso;
+#X text 707 363 5 - Wood2;
+#X text 707 378 6 - Beats;
+#X text 707 393 7 - Two Fixed;
+#X text 707 407 8 - Clump;
+#X msg 297 508 110;
+#X msg 299 461 75;
+#X msg 86 517 0;
+#X obj 26 461 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text -5 439 noteOn \, amp;
+#X text -11 425 CLICK TO PLAY;
+#X msg 27 511 100;
+#X text 71 28 ModalBar~;
+#X text 72 46 Modal Synthesis of Struck Bar Instruments;
+#X msg 108 241 440;
+#X connect 0 0 8 0;
+#X connect 2 0 27 0;
+#X connect 3 0 28 0;
+#X connect 4 0 16 0;
+#X connect 4 0 14 0;
+#X connect 4 0 55 0;
+#X connect 4 0 17 0;
+#X connect 4 0 15 0;
+#X connect 4 0 48 0;
+#X connect 8 0 18 3;
+#X connect 9 0 18 2;
+#X connect 10 0 9 0;
+#X connect 12 0 32 0;
+#X connect 12 0 13 0;
+#X connect 14 0 23 0;
+#X connect 15 0 2 0;
+#X connect 16 0 0 0;
+#X connect 17 0 3 0;
+#X connect 18 0 5 0;
+#X connect 18 0 5 1;
+#X connect 23 0 29 0;
+#X connect 25 0 26 0;
+#X connect 26 0 18 3;
+#X connect 27 0 18 3;
+#X connect 28 0 18 3;
+#X connect 29 0 18 3;
+#X connect 32 0 18 3;
+#X connect 34 0 36 0;
+#X connect 36 0 18 3;
+#X connect 46 0 34 0;
+#X connect 47 0 25 0;
+#X connect 48 0 18 1;
+#X connect 49 0 52 0;
+#X connect 52 0 18 1;
+#X connect 55 0 10 0;

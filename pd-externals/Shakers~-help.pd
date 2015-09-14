@@ -1,0 +1,86 @@
+#N canvas 72 66 982 721 10;
+#X obj 342 259 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 7500 1;
+#X text 363 383 comment;
+#X obj 340 319 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 11000 1;
+#X obj 341 384 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 11000 1;
+#X obj 364 179 loadbang;
+#X obj 33 622 dac~;
+#X msg 547 28 \; pd dsp 1;
+#X msg 544 74 \; pd dsp 0;
+#X msg 339 282 stkCtrl 1 \$1;
+#X msg -12 451 stkCtrl 2 \$1;
+#X msg 335 349 stkCtrl 4 \$1;
+#X msg 338 412 stkCtrl 11 \$1;
+#X floatatom 199 460 5 0 0 0 - - -;
+#X obj 199 313 vsl 15 128 0 1500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 2540 1;
+#X text 128 303 Frequency;
+#X text 72 28 Shakers~;
+#X text 72 46 PhISEM (Physically Informed Stochastic Event Modeling)
+;
+#X text 482 259 Resonance Frequency;
+#X text -21 277 Shake Energy;
+#X text 478 386 System Decay;
+#X text 478 321 Number of Objects;
+#X obj 47 586 Shakers~;
+#X msg 342 595 stkCtrl 1071 \$1;
+#X obj 342 568 hradio 15 1 0 23 empty empty empty 0 -6 0 8 -262144
+-1 -1 0;
+#X floatatom 299 588 5 0 0 0 - - -;
+#X text 723 191 0 - Maraca;
+#X msg 199 276 300;
+#X obj -11 307 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X msg 298 396 0;
+#X msg 294 307 110;
+#X msg 308 258 75;
+#X msg 301 356 110;
+#X text 723 206 1 - Cabasa;
+#X text 723 221 2 - Sekere;
+#X text 723 236 3 - Guiro;
+#X text 723 251 4 - Water Drops;
+#X text 723 267 5 - Bamboo Chimes;
+#X text 723 282 6 - Tambourine;
+#X text 723 297 7 - Sleigh Bells;
+#X text 723 311 8 - Sticks;
+#X text 724 325 9 - Crunch;
+#X text 724 339 10 - Wrench;
+#X text 724 353 11 - Sand Paper;
+#X text 725 369 12 - Coke Can;
+#X text 725 384 13 - Next Mug;
+#X text 725 399 14 - Penny + Mug;
+#X text 725 415 15 - Nickel + Mug;
+#X text 724 430 16 - Dime + Mug;
+#X text 725 445 17 - Quarter + Mug;
+#X text 725 459 18 - Franc + Mug;
+#X text 726 473 19 - Peso + Mug;
+#X text 726 487 20 - Big Rocks;
+#X text 726 501 21 - Little Rocks;
+#X text 726 515 22 - Tuned Bamboo Chimes;
+#X connect 0 0 8 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 30 0;
+#X connect 4 0 28 0;
+#X connect 4 0 26 0;
+#X connect 4 0 31 0;
+#X connect 4 0 29 0;
+#X connect 8 0 21 3;
+#X connect 9 0 21 3;
+#X connect 10 0 21 3;
+#X connect 11 0 21 3;
+#X connect 12 0 21 2;
+#X connect 13 0 12 0;
+#X connect 21 0 5 0;
+#X connect 22 0 21 3;
+#X connect 23 0 22 0;
+#X connect 23 0 24 0;
+#X connect 26 0 13 0;
+#X connect 27 0 9 0;
+#X connect 28 0 21 1;
+#X connect 29 0 2 0;
+#X connect 30 0 0 0;
+#X connect 31 0 3 0;

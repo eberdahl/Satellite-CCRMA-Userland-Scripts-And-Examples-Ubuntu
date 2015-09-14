@@ -1,0 +1,74 @@
+#N canvas 72 66 982 721 10;
+#X obj 254 226 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 1200 1;
+#X text 277 404 comment;
+#X obj 256 281 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 11000 1;
+#X obj 254 340 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 500 1;
+#X obj 255 405 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 3500 1;
+#X obj 255 465 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 2000 1;
+#X obj 276 146 loadbang;
+#X obj 33 622 dac~;
+#X msg 547 28 \; pd dsp 1;
+#X msg 544 74 \; pd dsp 0;
+#X msg 251 249 stkCtrl 1 \$1;
+#X msg 253 309 stkCtrl 2 \$1;
+#X msg 251 368 stkCtrl 4 \$1;
+#X msg 252 433 stkCtrl 11 \$1;
+#X msg 252 493 stkCtrl 128 \$1;
+#X floatatom 138 472 5 0 0 0 - - -;
+#X obj 138 325 vsl 15 128 0 1500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 931 1;
+#X text 67 315 Frequency;
+#X text 185 29 FMVoices~;
+#X text 186 47 FM Synthesis Singing;
+#X text 184 65 3 Carriers and 1 common Modulator \,;
+#X text 185 80 Algorithm 6 of the TX81Z;
+#X text 394 226 LFO Depth;
+#X text 403 406 LFO Speed;
+#X obj 32 586 FMVoices~;
+#X msg 138 287 110;
+#X text 400 464 Spectral Tilt;
+#X text 398 338 Vowel;
+#X text 399 283 FM Gains;
+#X msg 212 276 110;
+#X msg 221 225 12;
+#X msg 214 376 35;
+#X msg 206 327 5;
+#X msg 213 440 20;
+#X obj 51 432 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X text 15 411 Amplitude;
+#X msg 52 286 0;
+#X connect 0 0 10 0;
+#X connect 2 0 11 0;
+#X connect 3 0 12 0;
+#X connect 4 0 13 0;
+#X connect 5 0 14 0;
+#X connect 6 0 30 0;
+#X connect 6 0 29 0;
+#X connect 6 0 25 0;
+#X connect 6 0 33 0;
+#X connect 6 0 31 0;
+#X connect 6 0 32 0;
+#X connect 6 0 36 0;
+#X connect 10 0 24 3;
+#X connect 11 0 24 3;
+#X connect 12 0 24 3;
+#X connect 13 0 24 3;
+#X connect 14 0 24 3;
+#X connect 15 0 24 2;
+#X connect 16 0 15 0;
+#X connect 24 0 7 0;
+#X connect 24 0 7 1;
+#X connect 25 0 16 0;
+#X connect 29 0 2 0;
+#X connect 30 0 0 0;
+#X connect 31 0 4 0;
+#X connect 32 0 3 0;
+#X connect 33 0 5 0;
+#X connect 34 0 24 1;
+#X connect 36 0 34 0;

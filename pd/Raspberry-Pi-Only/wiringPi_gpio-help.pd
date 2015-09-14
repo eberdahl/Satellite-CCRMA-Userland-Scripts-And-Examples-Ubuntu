@@ -1,0 +1,35 @@
+#N canvas 548 198 514 491 10;
+#X text -60 454 Jaime Oliver La Rosa - 2014 (la.rosa@nyu.edu);
+#X text -92 335 This object uses the wiringPi library. For more information
+see: http://www.wiringpi.com;
+#X floatatom -83 135 5 0 0 0 - - -;
+#X text 60 140 args are (pin number \, mode (0=OUTPUT \, 1=INPUT) \,
+and default value;
+#X text -86 65 In OUTPUT mode \, change the number box to send the
+value out the pin;
+#X obj -83 113 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text -91 384 pin numberings correspond to http://www.wiringpi.com/pins
+\, so pin 0 is gpio17;
+#X floatatom -83 304 5 0 0 0 - - -;
+#X obj -83 252 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -54 239 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text -86 191 In INPUT mode \, bang the object to see value on the
+pin;
+#X obj -54 259 metro 20;
+#X text -85 -4 TO USE THIS \, PD MUST BE STARTED WITH ROOT PRIVILEDGES.
+;
+#X text -85 8 TRY THE COMMENT sudo su TO CHANGE TO ROOT AND THEN START
+pd.;
+#X text -85 28 BE CAREFUL IN REALLY TRYING TO FIGURE OUT WHICH PIN
+IS WHICH ...;
+#X obj -83 156 wiringPi_gpio 1 0 1;
+#X obj -83 282 wiringPi_gpio 7 1 0;
+#X connect 2 0 15 0;
+#X connect 5 0 2 0;
+#X connect 8 0 16 0;
+#X connect 9 0 11 0;
+#X connect 11 0 16 0;
+#X connect 16 0 7 0;

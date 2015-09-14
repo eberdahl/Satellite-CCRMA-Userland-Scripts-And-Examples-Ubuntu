@@ -1,0 +1,3 @@
+I tried
+mv gpio.l_i386 gpio.l_arm
+to see if that would make it work.  Then I could instantiate the object, but it said it couldn't access the port.

@@ -1,0 +1,80 @@
+#N canvas 450 231 721 570 10;
+#X obj 106 447 Wurley~;
+#X text 467 184 Modular Index One;
+#X text 467 249 Crossfade of Outputs;
+#X text 468 315 LFO Speed;
+#X text 472 377 LFO Depth;
+#X text 472 444 ASDR 2 & 4 Targets;
+#X obj 100 77 loadbang;
+#X msg 585 69 \; pd dsp 1;
+#X msg 585 112 \; pd dsp 0;
+#X obj 107 498 dac~;
+#X text 53 46 STK Wurlitzer electric piano FM synthesis instrument
+;
+#X obj 328 160 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 11600 1;
+#X obj 328 224 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 1300 1;
+#X obj 328 288 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 3300 1;
+#X obj 328 354 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 6000 1;
+#X obj 327 416 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 2100 1;
+#X obj 117 260 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 10000 1;
+#X floatatom 117 410 5 0 0 0 - - -;
+#X msg 325 183 stkCtrl 2 \$1;
+#X msg 325 247 stkCtrl 4 \$1;
+#X msg 325 311 stkCtrl 11 \$1;
+#X msg 325 377 stkCtrl 1 \$1;
+#X msg 324 439 stkCtrl 128 \$1;
+#X text 102 234 Frequency;
+#X floatatom 283 416 5 0 0 0 - - -;
+#X floatatom 284 288 5 0 0 0 - - -;
+#X floatatom 283 223 5 0 0 0 - - -;
+#X floatatom 284 160 5 0 0 0 - - -;
+#X msg 55 112 21;
+#X floatatom 283 355 5 0 0 0 - - -;
+#X msg 101 112 60;
+#X msg 152 112 33;
+#X msg 203 112 13;
+#X msg 249 112 116;
+#X msg 118 211 100;
+#X msg 27 274 100;
+#X msg 62 273 0;
+#X text 12 237 Amplitude;
+#X text 13 251 NoteON;
+#X connect 0 0 9 0;
+#X connect 0 0 9 1;
+#X connect 6 0 28 0;
+#X connect 6 0 30 0;
+#X connect 6 0 31 0;
+#X connect 6 0 32 0;
+#X connect 6 0 33 0;
+#X connect 6 0 34 0;
+#X connect 11 0 18 0;
+#X connect 11 0 27 0;
+#X connect 12 0 19 0;
+#X connect 12 0 26 0;
+#X connect 13 0 20 0;
+#X connect 13 0 25 0;
+#X connect 14 0 21 0;
+#X connect 14 0 29 0;
+#X connect 15 0 22 0;
+#X connect 15 0 24 0;
+#X connect 16 0 17 0;
+#X connect 17 0 0 2;
+#X connect 18 0 0 3;
+#X connect 19 0 0 3;
+#X connect 20 0 0 3;
+#X connect 21 0 0 3;
+#X connect 22 0 0 3;
+#X connect 28 0 15 0;
+#X connect 30 0 14 0;
+#X connect 31 0 13 0;
+#X connect 32 0 12 0;
+#X connect 33 0 11 0;
+#X connect 34 0 16 0;
+#X connect 35 0 0 1;
+#X connect 36 0 0 1;

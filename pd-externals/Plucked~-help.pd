@@ -1,0 +1,29 @@
+#N canvas 72 66 597 671 10;
+#X obj 364 179 loadbang;
+#X obj 33 622 dac~;
+#X msg 420 42 \; pd dsp 1;
+#X msg 417 88 \; pd dsp 0;
+#X floatatom 82 450 5 0 0 0 - - -;
+#X obj 82 303 vsl 15 128 0 1500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 3925 1;
+#X text 11 293 Frequency;
+#X msg 45 512 0;
+#X obj -4 460 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text -35 438 noteOn \, amp;
+#X text -41 424 CLICK TO PLAY;
+#X msg -3 510 100;
+#X msg 83 266 440;
+#X obj 32 586 Plucked~;
+#X text 185 29 Plucked~;
+#X text 185 47 Karplus-Strong Plucked String;
+#X connect 0 0 12 0;
+#X connect 0 0 7 0;
+#X connect 4 0 13 2;
+#X connect 5 0 4 0;
+#X connect 7 0 13 1;
+#X connect 8 0 11 0;
+#X connect 11 0 13 1;
+#X connect 12 0 5 0;
+#X connect 13 0 1 0;
+#X connect 13 0 1 1;

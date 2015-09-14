@@ -1,0 +1,57 @@
+#N canvas 72 66 982 721 10;
+#X obj 336 342 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 400 1;
+#X text 359 520 comment;
+#X obj 338 397 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 5000 1;
+#X obj 336 456 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 3000 1;
+#X obj 337 521 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 3200 1;
+#X obj 358 262 loadbang;
+#X obj 150 627 dac~;
+#X msg 547 28 \; pd dsp 1;
+#X msg 544 74 \; pd dsp 0;
+#X msg 333 365 stkCtrl 1 \$1;
+#X msg 335 425 stkCtrl 2 \$1;
+#X msg 333 484 stkCtrl 4 \$1;
+#X msg 334 549 stkCtrl 11 \$1;
+#X msg 123 437 stkCtrl 128 \$1;
+#X msg 296 492 35;
+#X msg 168 531 0;
+#X msg 302 341 4;
+#X obj 149 591 Resonate~;
+#X text 477 342 Zero Radii;
+#X text 185 29 Resonate~;
+#X text 185 47 Noise-driven formant filter;
+#X text 185 61 A noise source excites a biquad resonance filter.;
+#X text 479 397 Resonance Frequency;
+#X text 478 452 Pole Radii;
+#X text 479 524 Notch Frequency;
+#X obj 123 288 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X text 141 308 Gain;
+#X msg 289 442 30;
+#X msg 293 392 50;
+#X connect 0 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 16 0;
+#X connect 5 0 28 0;
+#X connect 5 0 14 0;
+#X connect 5 0 27 0;
+#X connect 5 0 15 0;
+#X connect 9 0 17 3;
+#X connect 10 0 17 3;
+#X connect 11 0 17 3;
+#X connect 12 0 17 3;
+#X connect 13 0 17 3;
+#X connect 14 0 4 0;
+#X connect 15 0 17 1;
+#X connect 16 0 0 0;
+#X connect 17 0 6 0;
+#X connect 17 0 6 1;
+#X connect 25 0 13 0;
+#X connect 27 0 3 0;
+#X connect 28 0 2 0;

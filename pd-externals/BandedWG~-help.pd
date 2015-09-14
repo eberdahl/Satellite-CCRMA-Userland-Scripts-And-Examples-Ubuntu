@@ -1,0 +1,84 @@
+#N canvas 72 66 986 725 10;
+#X obj 32 586 BandedWG~;
+#X obj 254 226 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 9400 1;
+#X text 277 404 comment;
+#X obj 256 281 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 5900 1;
+#X obj 254 340 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 255 405 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 2000 1;
+#X obj 255 465 hsl 128 15 0 128 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 7350 1;
+#X obj 276 146 loadbang;
+#X msg 276 195 64;
+#X msg 196 195 20;
+#X obj 51 485 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 20 463 noteOn \, amp;
+#X msg 51 534 127;
+#X obj 33 622 dac~;
+#X msg 547 28 \; pd dsp 1;
+#X msg 547 52 \; pd dsp 0;
+#X msg 251 249 stkCtrl 1 \$1;
+#X text 393 226 Gain;
+#X text 399 283 Bow Pressure;
+#X text 404 340 Bow Motion;
+#X msg 253 309 stkCtrl 2 \$1;
+#X msg 251 368 stkCtrl 4 \$1;
+#X msg 252 433 stkCtrl 11 \$1;
+#X msg 267 618 stkCtrl 16 \$1;
+#X msg 252 493 stkCtrl 128 \$1;
+#X obj 267 571 hradio 15 1 0 4 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X floatatom 282 596 5 0 0 0 - - -;
+#X text 395 565 Instrument preset;
+#X text 395 582 0 Uniform Bar;
+#X text 395 628 3 Tibetan bowl;
+#X text 395 597 1 Tuned Bar;
+#X text 395 613 2 Glass Harmonica;
+#X text 400 464 Bow Velocity;
+#X text 398 298 (set to 0 for "strike");
+#X text 402 355 (if Bow Pressure != 0);
+#X floatatom 117 469 5 0 0 0 - - -;
+#X obj 117 322 vsl 15 128 0 1500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 5463 1;
+#X text 135 300 Frequency;
+#X msg 117 284 220;
+#X msg 233 194 0;
+#X msg 159 196 64;
+#X text 14 449 CLICK TO PLAY;
+#X text 403 406 Integration Constant;
+#X msg 18 529 0;
+#X connect 0 0 13 0;
+#X connect 0 0 13 1;
+#X connect 1 0 16 0;
+#X connect 3 0 20 0;
+#X connect 4 0 21 0;
+#X connect 5 0 22 0;
+#X connect 6 0 24 0;
+#X connect 7 0 8 0;
+#X connect 7 0 39 0;
+#X connect 7 0 38 0;
+#X connect 7 0 40 0;
+#X connect 7 0 9 0;
+#X connect 7 0 43 0;
+#X connect 8 0 1 0;
+#X connect 9 0 5 0;
+#X connect 10 0 12 0;
+#X connect 12 0 0 1;
+#X connect 16 0 0 3;
+#X connect 20 0 0 3;
+#X connect 21 0 0 3;
+#X connect 22 0 0 3;
+#X connect 23 0 0 3;
+#X connect 24 0 0 3;
+#X connect 25 0 23 0;
+#X connect 25 0 26 0;
+#X connect 35 0 0 2;
+#X connect 36 0 35 0;
+#X connect 38 0 36 0;
+#X connect 39 0 3 0;
+#X connect 40 0 6 0;
+#X connect 43 0 0 1;

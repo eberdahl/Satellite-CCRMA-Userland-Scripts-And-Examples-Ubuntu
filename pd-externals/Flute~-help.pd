@@ -1,0 +1,75 @@
+#N canvas 72 66 982 721 10;
+#X obj 254 226 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 500 1;
+#X text 277 404 comment;
+#X obj 256 281 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 2400 1;
+#X obj 254 340 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 1500 1;
+#X obj 255 405 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 3000 1;
+#X obj 255 465 hsl 128 15 0 128 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 276 146 loadbang;
+#X obj 50 507 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 21 478 noteOn \, amp;
+#X msg 51 534 127;
+#X obj 33 622 dac~;
+#X msg 547 28 \; pd dsp 1;
+#X msg 544 74 \; pd dsp 0;
+#X msg 251 249 stkCtrl 1 \$1;
+#X msg 253 309 stkCtrl 2 \$1;
+#X msg 251 368 stkCtrl 4 \$1;
+#X msg 252 433 stkCtrl 11 \$1;
+#X msg 252 493 stkCtrl 128 \$1;
+#X floatatom 138 472 5 0 0 0 - - -;
+#X obj 138 325 vsl 15 128 0 1500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 7451 1;
+#X text 67 315 Frequency;
+#X text 14 449 CLICK TO PLAY;
+#X msg 20 534 0;
+#X text 404 340 Noise Gain;
+#X msg 212 276 24;
+#X obj 32 586 Clarinet~;
+#X text 394 226 Vibrato Gain;
+#X text 403 406 Vibrato Frequency;
+#X msg 213 440 0;
+#X text 400 464 Breath Pressure (Volume);
+#X text -3 463 (then set Pressure);
+#X text 184 29 Flute~;
+#X text 183 44 Flute Model;
+#X text 399 283 Jet Delay;
+#X msg 138 287 880;
+#X msg 206 327 15;
+#X msg 221 225 5;
+#X msg 214 376 30;
+#X connect 0 0 13 0;
+#X connect 2 0 14 0;
+#X connect 3 0 15 0;
+#X connect 4 0 16 0;
+#X connect 5 0 17 0;
+#X connect 6 0 36 0;
+#X connect 6 0 24 0;
+#X connect 6 0 34 0;
+#X connect 6 0 28 0;
+#X connect 6 0 37 0;
+#X connect 6 0 35 0;
+#X connect 7 0 9 0;
+#X connect 9 0 25 1;
+#X connect 13 0 25 3;
+#X connect 14 0 25 3;
+#X connect 15 0 25 3;
+#X connect 16 0 25 3;
+#X connect 17 0 25 3;
+#X connect 18 0 25 2;
+#X connect 19 0 18 0;
+#X connect 22 0 25 1;
+#X connect 24 0 2 0;
+#X connect 25 0 10 0;
+#X connect 25 0 10 1;
+#X connect 28 0 5 0;
+#X connect 34 0 19 0;
+#X connect 35 0 3 0;
+#X connect 36 0 0 0;
+#X connect 37 0 4 0;

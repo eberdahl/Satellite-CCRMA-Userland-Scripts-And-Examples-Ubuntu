@@ -1,0 +1,75 @@
+#N canvas 72 66 982 721 10;
+#X obj 254 226 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 6000 1;
+#X text 277 404 comment;
+#X obj 256 281 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 1000 1;
+#X obj 254 340 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 6400 1;
+#X obj 255 405 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 10000 1;
+#X obj 276 146 loadbang;
+#X obj 51 485 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 20 463 noteOn \, amp;
+#X msg 51 534 127;
+#X obj 32 676 dac~;
+#X msg 547 28 \; pd dsp 1;
+#X msg 546 66 \; pd dsp 0;
+#X msg 251 249 stkCtrl 1 \$1;
+#X floatatom 117 469 5 0 0 0 - - -;
+#X obj 117 322 vsl 15 128 0 1500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 1863 1;
+#X text 135 300 Frequency;
+#X msg 117 284 220;
+#X msg 216 325 64;
+#X text 14 449 CLICK TO PLAY;
+#X msg 18 529 0;
+#X text 393 226 Vibrato Gain;
+#X msg 253 309 stkCtrl 4 \$1;
+#X text 399 283 Noise Gain;
+#X obj 32 586 BlowBotl~;
+#X msg 251 368 stkCtrl 11 \$1;
+#X text 398 339 Vibrato Gain;
+#X text 403 406 Volume;
+#X msg 252 434 stkCtrl 128 \$1;
+#X obj 109 632 line~;
+#X obj 33 649 *~;
+#X obj 144 578 delay 1000;
+#X msg 109 603 1 100;
+#X msg 153 602 0 200;
+#X msg 211 384 100;
+#X msg 214 262 10;
+#X msg 213 212 60;
+#X connect 0 0 12 0;
+#X connect 2 0 21 0;
+#X connect 3 0 24 0;
+#X connect 4 0 27 0;
+#X connect 5 0 35 0;
+#X connect 5 0 34 0;
+#X connect 5 0 16 0;
+#X connect 5 0 17 0;
+#X connect 5 0 33 0;
+#X connect 6 0 8 0;
+#X connect 6 0 31 0;
+#X connect 6 0 30 0;
+#X connect 8 0 23 1;
+#X connect 12 0 23 3;
+#X connect 13 0 23 2;
+#X connect 14 0 13 0;
+#X connect 16 0 14 0;
+#X connect 17 0 3 0;
+#X connect 19 0 23 1;
+#X connect 21 0 23 3;
+#X connect 23 0 29 0;
+#X connect 24 0 23 3;
+#X connect 27 0 23 3;
+#X connect 28 0 29 1;
+#X connect 29 0 9 0;
+#X connect 29 0 9 1;
+#X connect 30 0 32 0;
+#X connect 31 0 28 0;
+#X connect 32 0 28 0;
+#X connect 33 0 4 0;
+#X connect 34 0 2 0;
+#X connect 35 0 0 0;

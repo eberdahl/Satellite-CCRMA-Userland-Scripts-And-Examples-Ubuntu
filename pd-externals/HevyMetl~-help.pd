@@ -1,0 +1,81 @@
+#N canvas 72 66 982 721 10;
+#X obj 342 259 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 100 1;
+#X text 365 437 comment;
+#X obj 344 314 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 11000 1;
+#X obj 342 373 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 10000 1;
+#X obj 343 438 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 3500 1;
+#X obj 343 498 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 12000 1;
+#X obj 364 179 loadbang;
+#X obj 33 622 dac~;
+#X msg 547 28 \; pd dsp 1;
+#X msg 544 74 \; pd dsp 0;
+#X msg 339 282 stkCtrl 1 \$1;
+#X msg 341 342 stkCtrl 2 \$1;
+#X msg 339 401 stkCtrl 4 \$1;
+#X msg 340 466 stkCtrl 11 \$1;
+#X msg 340 526 stkCtrl 128 \$1;
+#X floatatom 82 450 5 0 0 0 - - -;
+#X obj 82 303 vsl 15 128 0 1500 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 3725 1;
+#X text 11 293 Frequency;
+#X text 482 259 LFO Depth;
+#X text 491 439 LFO Speed;
+#X msg 300 309 110;
+#X msg 302 409 35;
+#X obj 33 428 vsl 15 128 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X text -3 407 Amplitude;
+#X obj 32 586 HevyMetl~;
+#X text 185 29 HevyMetl~;
+#X text 186 47 "Heavy Metal" FM Synth;
+#X text 184 65 3 Cascade Operators with Feedback Modulation;
+#X text 186 81 Algorithm 3 of the TX81Z;
+#X text 485 314 Total Modulator Index;
+#X text 484 369 Modulator Crossfade;
+#X text 487 497 ADSR 2 & 4 Target;
+#X msg 301 473 120;
+#X msg 295 360 100;
+#X msg 308 258 1;
+#X msg 83 266 440;
+#X obj 83 511 line;
+#X obj 82 484 pack 0 50;
+#X floatatom 140 429 5 0 0 0 - - -;
+#X text 133 405 gliss time;
+#X msg 1 272 0;
+#X connect 0 0 10 0;
+#X connect 2 0 11 0;
+#X connect 3 0 12 0;
+#X connect 4 0 13 0;
+#X connect 5 0 14 0;
+#X connect 6 0 34 0;
+#X connect 6 0 20 0;
+#X connect 6 0 35 0;
+#X connect 6 0 32 0;
+#X connect 6 0 21 0;
+#X connect 6 0 33 0;
+#X connect 6 0 40 0;
+#X connect 10 0 24 3;
+#X connect 11 0 24 3;
+#X connect 12 0 24 3;
+#X connect 13 0 24 3;
+#X connect 14 0 24 3;
+#X connect 15 0 37 0;
+#X connect 16 0 15 0;
+#X connect 20 0 2 0;
+#X connect 21 0 4 0;
+#X connect 22 0 24 1;
+#X connect 24 0 7 0;
+#X connect 24 0 7 1;
+#X connect 32 0 5 0;
+#X connect 33 0 3 0;
+#X connect 34 0 0 0;
+#X connect 35 0 16 0;
+#X connect 36 0 24 2;
+#X connect 37 0 36 0;
+#X connect 38 0 37 1;
+#X connect 40 0 22 0;

@@ -1,0 +1,42 @@
+#N canvas 627 209 519 495 10;
+#X obj 12 383 gpio 4;
+#X obj 94 337 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 12 423 5 0 0 0 - - -;
+#X obj 138 367 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 98 225 output \$1;
+#X obj 98 204 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 12 195 open \$1;
+#X obj 12 175 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 141 269 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 121 206 Set pin to output mode;
+#X text 164 224 For input \, send "output 0";
+#X obj 138 387 metro 10;
+#X text 157 269 Value for output (no effect for input);
+#X text 112 337 Send one bang to check the pin value once (for input)
+;
+#X text 155 365 Continuously poll the input pin;
+#X obj 12 446 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 51 422 Display pin value for inputs;
+#X text 8 5 Demo patch for using the gpio object;
+#X text 64 111 The argument to the GPIO object is the GPIO pin number
+;
+#X text 65 122 See http://elinux.org/RPi_Low-level_peripherals (this
+is not simply the pin number along the header);
+#X text 6 25 THIS VERSION OF THE OBJECT DOES NOT REQUIRE pd TO BE RUN
+WITH ROOT PRIVILEDGES.;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 15 0;
+#X connect 3 0 11 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 0 0;
+#X connect 7 0 6 0;
+#X connect 8 0 0 0;
+#X connect 11 0 0 0;
