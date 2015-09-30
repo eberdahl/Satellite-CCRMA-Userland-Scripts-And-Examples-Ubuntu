@@ -1,0 +1,74 @@
+#N canvas 714 136 778 698 10;
+#X obj 94 337 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 12 423 5 0 0 0 - - -;
+#X obj 138 367 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 98 225 output \$1;
+#X obj 98 204 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 12 195 open \$1;
+#X obj 12 175 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 141 269 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 121 206 Set pin to output mode;
+#X text 164 224 For input \, send "output 0";
+#X obj 138 387 metro 10;
+#X text 157 269 Value for output (no effect for input);
+#X text 112 337 Send one bang to check the pin value once (for input)
+;
+#X text 155 365 Continuously poll the input pin;
+#X obj 12 446 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 51 422 Display pin value for inputs;
+#X obj 546 522 gpio 17;
+#X msg 634 470 output 1;
+#X obj 538 275 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 628 286 delay 10;
+#X floatatom 548 547 5 0 0 0 - - -;
+#X msg 585 428 open 1;
+#X obj 12 383 gpio 22;
+#X msg 527 395 1;
+#X msg 574 377 0;
+#X text 290 526 100 \, 90 for 4.7Mohm resistor;
+#X floatatom 88 525 5 0 0 0 - - -;
+#X obj 73 569 +;
+#X msg 110 476 0;
+#X obj 534 302 metro 10;
+#X obj 146 625 shell;
+#X msg 171 598 gpio -g mode 22 off;
+#X msg 167 570 gpio export 22 in;
+#X msg 324 570 gpio export 17 out;
+#X msg 328 598 gpio -g mode 17 out;
+#X obj 576 348 delay 9;
+#X text 58 38 This seems to be too noisy;
+#X connect 0 0 22 0;
+#X connect 1 0 14 0;
+#X connect 1 0 27 0;
+#X connect 2 0 10 0;
+#X connect 3 0 22 0;
+#X connect 4 0 3 0;
+#X connect 5 0 22 0;
+#X connect 6 0 5 0;
+#X connect 7 0 22 0;
+#X connect 10 0 22 0;
+#X connect 16 0 20 0;
+#X connect 17 0 16 0;
+#X connect 18 0 29 0;
+#X connect 21 0 16 0;
+#X connect 22 0 1 0;
+#X connect 23 0 16 0;
+#X connect 24 0 16 0;
+#X connect 26 0 27 1;
+#X connect 27 0 26 0;
+#X connect 28 0 26 0;
+#X connect 29 0 23 0;
+#X connect 29 0 35 0;
+#X connect 31 0 30 0;
+#X connect 32 0 30 0;
+#X connect 33 0 30 0;
+#X connect 34 0 30 0;
+#X connect 35 0 24 0;
+#X connect 35 0 0 0;
