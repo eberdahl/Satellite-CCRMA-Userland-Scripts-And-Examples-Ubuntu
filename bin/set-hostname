@@ -54,12 +54,12 @@ else
 	sudo cp /etc/hostname /etc/hostname.backup
 	sudo mv ~/bin/hostname /etc
 
-	cp /etc/avahi/avahi-daemon.conf ~/bin
-	# From bash directly, there wouldn't be extra quotes around the new hostname
-	# e.g, perl -pi -e 's/\Ahost-name.*/host-name=$1/g' avahi-daemon.conf
-	perl -pi -e 's/\Ahost-name.*/host-name='$1'/g' avahi-daemon.conf
-	sudo cp /etc/avahi/avahi-daemon.conf /etc/avahi/avahi-daemon.conf.backup
-	sudo mv ~/bin/avahi-daemon.conf /etc/avahi
+	##cp /etc/avahi/avahi-daemon.conf ~/bin
+	## From bash directly, there wouldn't be extra quotes around the new hostname
+	## e.g, perl -pi -e 's/\Ahost-name.*/host-name=$1/g' avahi-daemon.conf
+	#perl -pi -e 's/\Ahost-name.*/host-name='$1'/g' avahi-daemon.conf
+	#sudo cp /etc/avahi/avahi-daemon.conf /etc/avahi/avahi-daemon.conf.backup
+	#sudo mv ~/bin/avahi-daemon.conf /etc/avahi
 
 	cp /etc/hosts ~/bin
 	# From bash directly, there wouldn't be extra quotes around the new hostname
