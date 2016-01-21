@@ -1,7 +1,5 @@
-#N canvas 147 22 1048 759 10;
-#X obj 210 605 mrpeach/packOSC;
+#N canvas 103 51 1048 759 10;
 #X msg 316 639 disconnect;
-#X obj 237 694 mrpeach/udpsend;
 #X text 316 604 Last step: Disconnect from the UDP socket for controlling
 ;
 #X text 316 621 the graphics.;
@@ -11,8 +9,6 @@
 #X text -55 452 Step 1: Connect to the UDP port created by that process
 ;
 #X msg -55 470 connect localhost 7000;
-#X obj 237 82 grid grid1 200 0 1000 200 0 1000 0 1 1 10 10 357 177
-;
 #X obj 577 140 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -258113
 -1 -1 0 1;
 #X obj 659 139 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -4034
@@ -37,29 +33,33 @@
 #X obj -60 405 loadbang;
 #X msg 792 364 symbol ellipse;
 #X msg 211 568 send /sg/\$7 my\$7 \$1 \$2 \$3 \$3 \$4 \$5 \$6 1;
-#X connect 0 0 2 0;
-#X connect 1 0 2 0;
-#X connect 8 0 2 0;
-#X connect 9 0 24 0;
-#X connect 9 1 25 0;
-#X connect 10 0 13 0;
-#X connect 11 0 14 0;
-#X connect 12 0 15 0;
-#X connect 13 0 21 3;
-#X connect 14 0 21 4;
-#X connect 15 0 21 5;
-#X connect 17 0 20 0;
-#X connect 20 0 21 2;
-#X connect 21 0 22 0;
-#X connect 21 1 22 1;
-#X connect 21 2 22 2;
-#X connect 21 3 22 3;
-#X connect 21 4 22 4;
-#X connect 21 5 22 5;
-#X connect 22 0 29 0;
-#X connect 23 0 22 6;
-#X connect 24 0 21 0;
-#X connect 25 0 21 1;
-#X connect 27 0 8 0;
-#X connect 28 0 22 6;
-#X connect 29 0 0 0;
+#X obj 210 605 osc/packOSC;
+#X obj 237 694 iemnet/udpsend;
+#X obj 237 82 unauthorized/grid grid1 200 0 1000 200 0 1000 0 1 1 10
+10 293 148;
+#X connect 0 0 28 0;
+#X connect 6 0 28 0;
+#X connect 7 0 10 0;
+#X connect 8 0 11 0;
+#X connect 9 0 12 0;
+#X connect 10 0 18 3;
+#X connect 11 0 18 4;
+#X connect 12 0 18 5;
+#X connect 14 0 17 0;
+#X connect 17 0 18 2;
+#X connect 18 0 19 0;
+#X connect 18 1 19 1;
+#X connect 18 2 19 2;
+#X connect 18 3 19 3;
+#X connect 18 4 19 4;
+#X connect 18 5 19 5;
+#X connect 19 0 26 0;
+#X connect 20 0 19 6;
+#X connect 21 0 18 0;
+#X connect 22 0 18 1;
+#X connect 24 0 6 0;
+#X connect 25 0 19 6;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 29 0 21 0;
+#X connect 29 1 22 0;

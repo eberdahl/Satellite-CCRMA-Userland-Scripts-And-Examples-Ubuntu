@@ -1,4 +1,4 @@
-#N canvas 339 196 450 300 10;
+#N canvas 6 532 450 300 10;
 #X obj 195 71 inlet;
 #X obj 199 247 outlet;
 #X obj 199 111 sig~;
@@ -8,6 +8,11 @@
 #X obj 72 136 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 200 172 lp2~ \$1 1;
+#X text 278 172 Later we should change;
+#X text 279 186 this to a lowpass filter;
+#X text 279 199 more readily available;
+#X text 279 212 in pd vanilla.;
+#X text 278 150 Note by Edgar Berdahl:;
 #X connect 0 0 2 0;
 #X connect 2 0 7 0;
 #X connect 3 0 1 0;

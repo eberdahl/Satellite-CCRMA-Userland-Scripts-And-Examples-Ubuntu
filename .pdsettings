@@ -1,0 +1,20 @@
+audioapi: 1
+noaudioin: False
+audioindev1: 0 2
+noaudioout: False
+audiooutdev1: 0 2
+audiobuf: 25
+rate: 44100
+callback: 0
+blocksize: 64
+nomidiin: True
+nomidiout: True
+path1: /usr/lib/pd/extra
+path2: /home/ccrma/src/pd-extended/objects-for-sat-ccrma
+path3: /home/ccrma/pd-externals
+npath: 3
+standardpath: 1
+verbose: 0
+nloadlib: 0
+defeatrt: 0
+flags: -lib iemlib1 -lib iemlib2 -lib iem_mp3 -lib iem_t3_lib
